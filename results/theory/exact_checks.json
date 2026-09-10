@@ -1,0 +1,4219 @@
+{
+  "schema": "bounded-context-exact-controls-v1",
+  "complete": true,
+  "arithmetic": "fractions.Fraction",
+  "scope": "Exhaustive finite-context identities and explicit continuous-diagonal witnesses; no benchmark or universal numerical proof.",
+  "finite_cases": [
+    {
+      "name": "unsigned_line_no_interior_row",
+      "A": [
+        [
+          "1"
+        ]
+      ],
+      "generators": [
+        [
+          "0"
+        ]
+      ],
+      "K": [
+        [
+          "-1"
+        ],
+        [
+          "-1/2"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1/2"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "concrete_indices": [
+        2
+      ],
+      "contexts_enumerated": 32,
+      "observations_checked": 4,
+      "observation_values": [
+        [
+          "-1",
+          "-1/2",
+          "0",
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "1/2",
+          "0",
+          "-1/2",
+          "-1"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5"
+        ],
+        [
+          "4/3",
+          "5/6",
+          "1/3",
+          "1/6",
+          "2/3"
+        ]
+      ],
+      "direct_lipschitz_loss": "1/2",
+      "sector_lipschitz_loss": "1/2",
+      "direct_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "sector_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "worst_lipschitz_context_indices": [
+        0
+      ]
+    },
+    {
+      "name": "signed_line_off_lift_generator",
+      "A": [
+        [
+          "1"
+        ],
+        [
+          "-1"
+        ]
+      ],
+      "generators": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "-1"
+        ]
+      ],
+      "K": [
+        [
+          "-1"
+        ],
+        [
+          "-1/2"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1/2"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "concrete_indices": [
+        2
+      ],
+      "contexts_enumerated": 32,
+      "observations_checked": 4,
+      "observation_values": [
+        [
+          "-1",
+          "-1/2",
+          "0",
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "1/2",
+          "0",
+          "-1/2",
+          "-1"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5"
+        ],
+        [
+          "4/3",
+          "5/6",
+          "1/3",
+          "1/6",
+          "2/3"
+        ]
+      ],
+      "direct_lipschitz_loss": "1/2",
+      "sector_lipschitz_loss": "1/2",
+      "direct_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "sector_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "worst_lipschitz_context_indices": [
+        0
+      ]
+    },
+    {
+      "name": "ordered_exact_lift",
+      "A": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "generators": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "K": [
+        [
+          "0"
+        ],
+        [
+          "1/2"
+        ],
+        [
+          "1"
+        ],
+        [
+          "3/2"
+        ],
+        [
+          "2"
+        ]
+      ],
+      "concrete_indices": [
+        0
+      ],
+      "contexts_enumerated": 32,
+      "observations_checked": 4,
+      "observation_values": [
+        [
+          "0",
+          "1/2",
+          "1",
+          "3/2",
+          "2"
+        ],
+        [
+          "0",
+          "-1/2",
+          "-1",
+          "-3/2",
+          "-2"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5"
+        ],
+        [
+          "1/3",
+          "1/6",
+          "2/3",
+          "7/6",
+          "5/3"
+        ]
+      ],
+      "direct_lipschitz_loss": "1",
+      "sector_lipschitz_loss": "1",
+      "direct_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "sector_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ],
+      "worst_lipschitz_context_indices": [
+        4
+      ]
+    },
+    {
+      "name": "rank_deficient_lift",
+      "A": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "generators": [
+        [
+          "0"
+        ]
+      ],
+      "K": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "concrete_indices": [
+        0,
+        1
+      ],
+      "contexts_enumerated": 64,
+      "observations_checked": 10,
+      "observation_values": [
+        [
+          "0",
+          "-1/3",
+          "-1/6",
+          "-1/2",
+          "-1/3",
+          "-2/3"
+        ],
+        [
+          "0",
+          "0",
+          "-1/6",
+          "-1/6",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/3",
+          "-1/6",
+          "1/6",
+          "-1/3",
+          "0"
+        ],
+        [
+          "0",
+          "-1/3",
+          "0",
+          "-1/3",
+          "0",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/3",
+          "0",
+          "1/3",
+          "0",
+          "1/3"
+        ],
+        [
+          "0",
+          "-1/3",
+          "1/6",
+          "-1/6",
+          "1/3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/6",
+          "1/6",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "0",
+          "1/3",
+          "1/6",
+          "1/2",
+          "1/3",
+          "2/3"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5",
+          "2/5"
+        ],
+        [
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "3/4",
+          "3/4"
+        ]
+      ],
+      "direct_lipschitz_loss": "1",
+      "sector_lipschitz_loss": "1",
+      "direct_observation_losses": [
+        "1/3",
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "sector_observation_losses": [
+        "1/3",
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "worst_lipschitz_context_indices": [
+        4
+      ]
+    },
+    {
+      "name": "unsigned_plane",
+      "A": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "generators": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "K": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "concrete_indices": [
+        0
+      ],
+      "contexts_enumerated": 512,
+      "observations_checked": 11,
+      "observation_values": [
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "-1/6",
+          "-1/3",
+          "-1/2",
+          "-1/3",
+          "-1/2",
+          "-2/3"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/6",
+          "-1/6",
+          "-1/6",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "-1/6",
+          "0",
+          "1/6",
+          "-1/3",
+          "-1/6",
+          "0"
+        ],
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "0",
+          "-1/6",
+          "-1/3",
+          "0",
+          "-1/6",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "0",
+          "1/6",
+          "1/3",
+          "0",
+          "1/6",
+          "1/3"
+        ],
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "1/6",
+          "0",
+          "-1/6",
+          "1/3",
+          "1/6",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/6",
+          "1/6",
+          "1/6",
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "1/6",
+          "1/3",
+          "1/2",
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        [
+          "0",
+          "1/3",
+          "2/3",
+          "-1/6",
+          "1/6",
+          "1/2",
+          "-1/3",
+          "0",
+          "1/3"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5",
+          "2/5",
+          "2/5",
+          "-3/5",
+          "1/5"
+        ],
+        [
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/2",
+          "3/4",
+          "3/4",
+          "3/4"
+        ]
+      ],
+      "direct_lipschitz_loss": "1",
+      "sector_lipschitz_loss": "1",
+      "direct_observation_losses": [
+        "1/3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/6",
+        "0",
+        "1/4"
+      ],
+      "sector_observation_losses": [
+        "1/3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/6",
+        "0",
+        "1/4"
+      ],
+      "worst_lipschitz_context_indices": [
+        2,
+        6
+      ]
+    },
+    {
+      "name": "signed_diagonal_dimension_two",
+      "A": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "-1"
+        ]
+      ],
+      "K": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "concrete_indices": [
+        0,
+        4,
+        8
+      ],
+      "contexts_enumerated": 512,
+      "observations_checked": 10,
+      "observation_values": [
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "-1/6",
+          "-1/3",
+          "-1/2",
+          "-1/3",
+          "-1/2",
+          "-2/3"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/6",
+          "-1/6",
+          "-1/6",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "-1/6",
+          "0",
+          "1/6",
+          "-1/3",
+          "-1/6",
+          "0"
+        ],
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "0",
+          "-1/6",
+          "-1/3",
+          "0",
+          "-1/6",
+          "-1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "0",
+          "1/6",
+          "1/3",
+          "0",
+          "1/6",
+          "1/3"
+        ],
+        [
+          "0",
+          "-1/6",
+          "-1/3",
+          "1/6",
+          "0",
+          "-1/6",
+          "1/3",
+          "1/6",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/6",
+          "1/6",
+          "1/6",
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        [
+          "0",
+          "1/6",
+          "1/3",
+          "1/6",
+          "1/3",
+          "1/2",
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5",
+          "2/5",
+          "2/5",
+          "-3/5",
+          "1/5"
+        ],
+        [
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/2",
+          "3/4",
+          "3/4",
+          "3/4"
+        ]
+      ],
+      "direct_lipschitz_loss": "0",
+      "sector_lipschitz_loss": "0",
+      "direct_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "sector_observation_losses": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "worst_lipschitz_context_indices": []
+    },
+    {
+      "name": "signed_diagonal_dimension_three_affine_failure",
+      "A": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "K": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1/4",
+          "1/4",
+          "3/4"
+        ],
+        [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2"
+        ]
+      ],
+      "concrete_indices": [
+        0,
+        1
+      ],
+      "contexts_enumerated": 64,
+      "observations_checked": 3,
+      "observation_values": [
+        [
+          "0",
+          "1/3",
+          "-1/12",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-3/5",
+          "1/5",
+          "0",
+          "1/5",
+          "-3/5",
+          "2/5"
+        ],
+        [
+          "3/5",
+          "4/5",
+          "3/20",
+          "2/5",
+          "1/5",
+          "2/5"
+        ]
+      ],
+      "direct_lipschitz_loss": "1/4",
+      "sector_lipschitz_loss": "1/4",
+      "direct_observation_losses": [
+        "1/12",
+        "0",
+        "1/20"
+      ],
+      "sector_observation_losses": [
+        "1/12",
+        "0",
+        "1/20"
+      ],
+      "worst_lipschitz_context_indices": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "continuous_diagonal_certificates": [
+    {
+      "dimension": 3,
+      "generator_count": 3,
+      "partition": [
+        "0",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/32",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "-1/4",
+          "-1/4",
+          "-3/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/2",
+          "-1/2",
+          "-1/2"
+        ],
+        [
+          "1/2",
+          "1/2",
+          "1/2",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "1/2"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "3/4"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/4"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/4"
+        ]
+      ],
+      "affine_coefficients": [
+        "4/15",
+        "4/15",
+        "-7/15"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/12",
+      "target_value": "-1/10",
+      "certified_gap": "1/60",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-1/2",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "1/2",
+          "-1/4",
+          "-1/4",
+          "-1/2"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/4",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        [
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "-1/2",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "-1/4",
+          "-1/4",
+          "-3/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3",
+          "-2/3",
+          "-2/3",
+          "-2/3"
+        ],
+        [
+          "2/3",
+          "2/3",
+          "2/3",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/3",
+        "2/3"
+      ],
+      "target": [
+        "1/3",
+        "1/3",
+        "2/3"
+      ],
+      "context": [
+        [
+          "7/12",
+          "7/12",
+          "11/12"
+        ],
+        [
+          "1/12",
+          "7/12",
+          "5/12"
+        ],
+        [
+          "7/12",
+          "1/12",
+          "5/12"
+        ]
+      ],
+      "affine_coefficients": [
+        "3/11",
+        "3/11",
+        "-5/11"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-13/132",
+      "target_value": "-4/33",
+      "certified_gap": "1/44",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-2/3",
+          "-2/3",
+          "-1/3",
+          "0",
+          "-1/3",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/3",
+          "1/3",
+          "2/3",
+          "-1/3",
+          "-1/3",
+          "-2/3"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/9",
+        "4/9",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/9",
+          "-1/9",
+          "-1/9"
+        ],
+        [
+          "1/9",
+          "1/9",
+          "1/9",
+          "-4/9",
+          "-4/9",
+          "-4/9"
+        ],
+        [
+          "4/9",
+          "4/9",
+          "4/9",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "4/9",
+        "3/4"
+      ],
+      "target": [
+        "4/9",
+        "4/9",
+        "3/4"
+      ],
+      "context": [
+        [
+          "25/36",
+          "25/36",
+          "1"
+        ],
+        [
+          "7/36",
+          "25/36",
+          "1/2"
+        ],
+        [
+          "25/36",
+          "7/36",
+          "1/2"
+        ]
+      ],
+      "affine_coefficients": [
+        "36/133",
+        "36/133",
+        "-61/133"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-11/133",
+      "target_value": "-55/532",
+      "certified_gap": "11/532",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-5/9",
+          "-23/36",
+          "-11/36",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "4/9",
+          "4/9",
+          "3/4",
+          "-4/9",
+          "-4/9",
+          "-3/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/7",
+        "2/7",
+        "3/7",
+        "4/7",
+        "5/7",
+        "6/7",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/7",
+          "-1/7",
+          "-1/7"
+        ],
+        [
+          "1/7",
+          "1/7",
+          "1/7",
+          "-2/7",
+          "-2/7",
+          "-2/7"
+        ],
+        [
+          "2/7",
+          "2/7",
+          "2/7",
+          "-3/7",
+          "-3/7",
+          "-3/7"
+        ],
+        [
+          "3/7",
+          "3/7",
+          "3/7",
+          "-4/7",
+          "-4/7",
+          "-4/7"
+        ],
+        [
+          "4/7",
+          "4/7",
+          "4/7",
+          "-5/7",
+          "-5/7",
+          "-5/7"
+        ],
+        [
+          "5/7",
+          "5/7",
+          "5/7",
+          "-6/7",
+          "-6/7",
+          "-6/7"
+        ],
+        [
+          "6/7",
+          "6/7",
+          "6/7",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "2/7",
+        "3/7"
+      ],
+      "target": [
+        "2/7",
+        "2/7",
+        "3/7"
+      ],
+      "context": [
+        [
+          "15/28",
+          "15/28",
+          "19/28"
+        ],
+        [
+          "1/28",
+          "15/28",
+          "5/28"
+        ],
+        [
+          "15/28",
+          "1/28",
+          "5/28"
+        ]
+      ],
+      "affine_coefficients": [
+        "7/27",
+        "7/27",
+        "-13/27"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-37/756",
+      "target_value": "-11/189",
+      "certified_gap": "1/108",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/7",
+          "-5/7",
+          "-2/7",
+          "-1/7",
+          "0",
+          "-1/7",
+          "-2/7",
+          "-3/7",
+          "-4/7",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "2/7",
+          "2/7",
+          "3/7",
+          "-2/7",
+          "-2/7",
+          "-3/7"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 3,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/49",
+        "4/49",
+        "9/49",
+        "16/49",
+        "25/49",
+        "36/49",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/49",
+          "-1/49",
+          "-1/49"
+        ],
+        [
+          "1/49",
+          "1/49",
+          "1/49",
+          "-4/49",
+          "-4/49",
+          "-4/49"
+        ],
+        [
+          "4/49",
+          "4/49",
+          "4/49",
+          "-9/49",
+          "-9/49",
+          "-9/49"
+        ],
+        [
+          "9/49",
+          "9/49",
+          "9/49",
+          "-16/49",
+          "-16/49",
+          "-16/49"
+        ],
+        [
+          "16/49",
+          "16/49",
+          "16/49",
+          "-25/49",
+          "-25/49",
+          "-25/49"
+        ],
+        [
+          "25/49",
+          "25/49",
+          "25/49",
+          "-36/49",
+          "-36/49",
+          "-36/49"
+        ],
+        [
+          "36/49",
+          "36/49",
+          "36/49",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 7,
+      "middle_interval": [
+        "25/49",
+        "36/49"
+      ],
+      "target": [
+        "25/49",
+        "25/49",
+        "36/49"
+      ],
+      "context": [
+        [
+          "149/196",
+          "149/196",
+          "193/196"
+        ],
+        [
+          "51/196",
+          "149/196",
+          "95/196"
+        ],
+        [
+          "149/196",
+          "51/196",
+          "95/196"
+        ]
+      ],
+      "affine_coefficients": [
+        "49/185",
+        "49/185",
+        "-87/185"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-2189/36260",
+      "target_value": "-682/9065",
+      "certified_gap": "11/740",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-36/49",
+          "-24/49",
+          "-5/7",
+          "-32/49",
+          "-27/49",
+          "-20/49",
+          "-11/49",
+          "0",
+          "-11/49",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "25/49",
+          "25/49",
+          "36/49",
+          "-25/49",
+          "-25/49",
+          "-36/49"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 3,
+      "partition": [
+        "0",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/32",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2"
+        ],
+        [
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "3/4",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/4",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/4",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "4/15",
+        "4/15",
+        "-7/15",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/12",
+      "target_value": "-1/10",
+      "certified_gap": "1/60",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-1/2",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-1/2",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/4",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "-1/2",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3"
+        ],
+        [
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/3",
+        "2/3"
+      ],
+      "target": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3"
+      ],
+      "context": [
+        [
+          "7/12",
+          "7/12",
+          "11/12",
+          "7/12"
+        ],
+        [
+          "1/12",
+          "7/12",
+          "5/12",
+          "1/12"
+        ],
+        [
+          "7/12",
+          "1/12",
+          "5/12",
+          "1/12"
+        ]
+      ],
+      "affine_coefficients": [
+        "3/11",
+        "3/11",
+        "-5/11",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-13/132",
+      "target_value": "-4/33",
+      "certified_gap": "1/44",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-2/3",
+          "-2/3",
+          "-1/3",
+          "0",
+          "-1/3",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "-1/3",
+          "-1/3",
+          "-2/3",
+          "-1/3"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/9",
+        "4/9",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9"
+        ],
+        [
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9"
+        ],
+        [
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "4/9",
+        "3/4"
+      ],
+      "target": [
+        "4/9",
+        "4/9",
+        "3/4",
+        "4/9"
+      ],
+      "context": [
+        [
+          "25/36",
+          "25/36",
+          "1",
+          "25/36"
+        ],
+        [
+          "7/36",
+          "25/36",
+          "1/2",
+          "7/36"
+        ],
+        [
+          "25/36",
+          "7/36",
+          "1/2",
+          "7/36"
+        ]
+      ],
+      "affine_coefficients": [
+        "36/133",
+        "36/133",
+        "-61/133",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-11/133",
+      "target_value": "-55/532",
+      "certified_gap": "11/532",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-5/9",
+          "-23/36",
+          "-11/36",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "4/9",
+          "4/9",
+          "3/4",
+          "4/9",
+          "-4/9",
+          "-4/9",
+          "-3/4",
+          "-4/9"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/7",
+        "2/7",
+        "3/7",
+        "4/7",
+        "5/7",
+        "6/7",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7"
+        ],
+        [
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7"
+        ],
+        [
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7"
+        ],
+        [
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7"
+        ],
+        [
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7"
+        ],
+        [
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7"
+        ],
+        [
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "2/7",
+        "3/7"
+      ],
+      "target": [
+        "2/7",
+        "2/7",
+        "3/7",
+        "2/7"
+      ],
+      "context": [
+        [
+          "15/28",
+          "15/28",
+          "19/28",
+          "15/28"
+        ],
+        [
+          "1/28",
+          "15/28",
+          "5/28",
+          "1/28"
+        ],
+        [
+          "15/28",
+          "1/28",
+          "5/28",
+          "1/28"
+        ]
+      ],
+      "affine_coefficients": [
+        "7/27",
+        "7/27",
+        "-13/27",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-37/756",
+      "target_value": "-11/189",
+      "certified_gap": "1/108",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/7",
+          "-5/7",
+          "-2/7",
+          "-1/7",
+          "0",
+          "-1/7",
+          "-2/7",
+          "-3/7",
+          "-4/7",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "2/7",
+          "2/7",
+          "3/7",
+          "2/7",
+          "-2/7",
+          "-2/7",
+          "-3/7",
+          "-2/7"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 4,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/49",
+        "4/49",
+        "9/49",
+        "16/49",
+        "25/49",
+        "36/49",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49"
+        ],
+        [
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49"
+        ],
+        [
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49"
+        ],
+        [
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49"
+        ],
+        [
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49"
+        ],
+        [
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49"
+        ],
+        [
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 7,
+      "middle_interval": [
+        "25/49",
+        "36/49"
+      ],
+      "target": [
+        "25/49",
+        "25/49",
+        "36/49",
+        "25/49"
+      ],
+      "context": [
+        [
+          "149/196",
+          "149/196",
+          "193/196",
+          "149/196"
+        ],
+        [
+          "51/196",
+          "149/196",
+          "95/196",
+          "51/196"
+        ],
+        [
+          "149/196",
+          "51/196",
+          "95/196",
+          "51/196"
+        ]
+      ],
+      "affine_coefficients": [
+        "49/185",
+        "49/185",
+        "-87/185",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-2189/36260",
+      "target_value": "-682/9065",
+      "certified_gap": "11/740",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-36/49",
+          "-24/49",
+          "-5/7",
+          "-32/49",
+          "-27/49",
+          "-20/49",
+          "-11/49",
+          "0",
+          "-11/49",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "25/49",
+          "25/49",
+          "36/49",
+          "25/49",
+          "-25/49",
+          "-25/49",
+          "-36/49",
+          "-25/49"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 3,
+      "partition": [
+        "0",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/32",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2"
+        ],
+        [
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 2,
+      "middle_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "3/4",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "4/15",
+        "4/15",
+        "-7/15",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/12",
+      "target_value": "-1/10",
+      "certified_gap": "1/60",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-1/2",
+          "-3/4",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-1/2",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 4,
+      "partition": [
+        "0",
+        "1/4",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/4",
+        "3/4"
+      ],
+      "target": [
+        "1/4",
+        "1/4",
+        "3/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "context": [
+        [
+          "1/2",
+          "1/2",
+          "1",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "affine_coefficients": [
+        "2/7",
+        "2/7",
+        "-3/7",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-1/7",
+      "target_value": "-5/28",
+      "certified_gap": "1/28",
+      "proved_universal_lower_bound": "1/64",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-3/4",
+          "-1/2",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "-1/4",
+          "-1/4",
+          "-3/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3",
+          "-2/3"
+        ],
+        [
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 3,
+      "middle_interval": [
+        "1/3",
+        "2/3"
+      ],
+      "target": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "context": [
+        [
+          "7/12",
+          "7/12",
+          "11/12",
+          "7/12",
+          "7/12",
+          "7/12",
+          "7/12",
+          "7/12"
+        ],
+        [
+          "1/12",
+          "7/12",
+          "5/12",
+          "1/12",
+          "1/12",
+          "1/12",
+          "1/12",
+          "1/12"
+        ],
+        [
+          "7/12",
+          "1/12",
+          "5/12",
+          "1/12",
+          "1/12",
+          "1/12",
+          "1/12",
+          "1/12"
+        ]
+      ],
+      "affine_coefficients": [
+        "3/11",
+        "3/11",
+        "-5/11",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-13/132",
+      "target_value": "-4/33",
+      "certified_gap": "1/44",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-2/3",
+          "-2/3",
+          "-1/3",
+          "0",
+          "-1/3",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "-1/3",
+          "-1/3",
+          "-2/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "-1/3"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 5,
+      "partition": [
+        "0",
+        "1/9",
+        "4/9",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9",
+          "-1/9"
+        ],
+        [
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9"
+        ],
+        [
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "4/9",
+        "3/4"
+      ],
+      "target": [
+        "4/9",
+        "4/9",
+        "3/4",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      "context": [
+        [
+          "25/36",
+          "25/36",
+          "1",
+          "25/36",
+          "25/36",
+          "25/36",
+          "25/36",
+          "25/36"
+        ],
+        [
+          "7/36",
+          "25/36",
+          "1/2",
+          "7/36",
+          "7/36",
+          "7/36",
+          "7/36",
+          "7/36"
+        ],
+        [
+          "25/36",
+          "7/36",
+          "1/2",
+          "7/36",
+          "7/36",
+          "7/36",
+          "7/36",
+          "7/36"
+        ]
+      ],
+      "affine_coefficients": [
+        "36/133",
+        "36/133",
+        "-61/133",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-11/133",
+      "target_value": "-55/532",
+      "certified_gap": "11/532",
+      "proved_universal_lower_bound": "1/96",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/4",
+          "-5/9",
+          "-23/36",
+          "-11/36",
+          "0",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "4/9",
+          "4/9",
+          "3/4",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "4/9",
+          "-4/9",
+          "-4/9",
+          "-3/4",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9",
+          "-4/9"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/7",
+        "2/7",
+        "3/7",
+        "4/7",
+        "5/7",
+        "6/7",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7",
+          "-1/7"
+        ],
+        [
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "1/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7"
+        ],
+        [
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7",
+          "-3/7"
+        ],
+        [
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "3/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7",
+          "-4/7"
+        ],
+        [
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "4/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7",
+          "-5/7"
+        ],
+        [
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "5/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7",
+          "-6/7"
+        ],
+        [
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "6/7",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 4,
+      "middle_interval": [
+        "2/7",
+        "3/7"
+      ],
+      "target": [
+        "2/7",
+        "2/7",
+        "3/7",
+        "2/7",
+        "2/7",
+        "2/7",
+        "2/7",
+        "2/7"
+      ],
+      "context": [
+        [
+          "15/28",
+          "15/28",
+          "19/28",
+          "15/28",
+          "15/28",
+          "15/28",
+          "15/28",
+          "15/28"
+        ],
+        [
+          "1/28",
+          "15/28",
+          "5/28",
+          "1/28",
+          "1/28",
+          "1/28",
+          "1/28",
+          "1/28"
+        ],
+        [
+          "15/28",
+          "1/28",
+          "5/28",
+          "1/28",
+          "1/28",
+          "1/28",
+          "1/28",
+          "1/28"
+        ]
+      ],
+      "affine_coefficients": [
+        "7/27",
+        "7/27",
+        "-13/27",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-37/756",
+      "target_value": "-11/189",
+      "certified_gap": "1/108",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-3/7",
+          "-5/7",
+          "-2/7",
+          "-1/7",
+          "0",
+          "-1/7",
+          "-2/7",
+          "-3/7",
+          "-4/7",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "2/7",
+          "2/7",
+          "3/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "2/7",
+          "-2/7",
+          "-2/7",
+          "-3/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7",
+          "-2/7"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    },
+    {
+      "dimension": 8,
+      "generator_count": 9,
+      "partition": [
+        "0",
+        "1/49",
+        "4/49",
+        "9/49",
+        "16/49",
+        "25/49",
+        "36/49",
+        "1"
+      ],
+      "generators": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49",
+          "-1/49"
+        ],
+        [
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "1/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49",
+          "-4/49"
+        ],
+        [
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "4/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49",
+          "-9/49"
+        ],
+        [
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "9/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49",
+          "-16/49"
+        ],
+        [
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "16/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49"
+        ],
+        [
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49",
+          "-36/49"
+        ],
+        [
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "36/49",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ]
+      ],
+      "anchor_index": 7,
+      "middle_interval": [
+        "25/49",
+        "36/49"
+      ],
+      "target": [
+        "25/49",
+        "25/49",
+        "36/49",
+        "25/49",
+        "25/49",
+        "25/49",
+        "25/49",
+        "25/49"
+      ],
+      "context": [
+        [
+          "149/196",
+          "149/196",
+          "193/196",
+          "149/196",
+          "149/196",
+          "149/196",
+          "149/196",
+          "149/196"
+        ],
+        [
+          "51/196",
+          "149/196",
+          "95/196",
+          "51/196",
+          "51/196",
+          "51/196",
+          "51/196",
+          "51/196"
+        ],
+        [
+          "149/196",
+          "51/196",
+          "95/196",
+          "51/196",
+          "51/196",
+          "51/196",
+          "51/196",
+          "51/196"
+        ]
+      ],
+      "affine_coefficients": [
+        "49/185",
+        "49/185",
+        "-87/185",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "minimum_diagonal": "0",
+      "minimum_concrete_union": "-2189/36260",
+      "target_value": "-682/9065",
+      "certified_gap": "11/740",
+      "proved_universal_lower_bound": "1/224",
+      "membership_certificate": {
+        "coefficients": [
+          "-36/49",
+          "-24/49",
+          "-5/7",
+          "-32/49",
+          "-27/49",
+          "-20/49",
+          "-11/49",
+          "0",
+          "-11/49",
+          "-1/4",
+          "-1/4",
+          "-1/4"
+        ],
+        "reconstruction": [
+          "25/49",
+          "25/49",
+          "36/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "25/49",
+          "-25/49",
+          "-25/49",
+          "-36/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49",
+          "-25/49"
+        ]
+      },
+      "slice_scope": "Exact diagonal slice follows from equal positive/negative coordinate groups and the written reconstruction proof, not sampled inclusions."
+    }
+  ],
+  "summary": {
+    "finite_cases": 7,
+    "contexts_enumerated": 1248,
+    "fixed_observations_checked": 46,
+    "diagonal_certificates": 21,
+    "discrepancies": 0
+  },
+  "time_utc": "2026-09-10T01:54:34.552081+00:00",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_sha256": {
+    "src/checks.py": "2414c9b9ff331302d11dc8a7921fc568d78a5f6abab7f3a45f2afee27d408f87"
+  },
+  "command": "python -B src/checks.py"
+}

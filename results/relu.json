@@ -1,0 +1,61 @@
+{
+  "schema": "neural-interface-regression-v1",
+  "complete": true,
+  "nonlinear": {
+    "architecture": [
+      1,
+      3,
+      2,
+      4,
+      2,
+      2
+    ],
+    "input_interval": [
+      "0",
+      "3"
+    ],
+    "prefix_pieces": 3,
+    "full_network_pieces": 8,
+    "true_minimum": "1/8",
+    "coarse_minimum": "-1/8",
+    "refined_minimum": "1/8",
+    "displayed_merge_generators": [
+      7,
+      8
+    ],
+    "exact_suffix_evaluation": true,
+    "suffix_solver_benchmark": false
+  },
+  "affine": {
+    "architecture": [
+      1,
+      9,
+      4,
+      2
+    ],
+    "input_interval": [
+      "0",
+      "1"
+    ],
+    "affine_pieces": 9,
+    "true_range": [
+      "9/4",
+      "13/4"
+    ],
+    "witness_upper_bound": "-1/12",
+    "theorem_derived_refined_lower_bound": "1/8",
+    "exact_refined_minimum_computed": false,
+    "dependency": "Written affine budget theorem at n=4, M=4; normalized loss 1/8",
+    "readout_l1": "17",
+    "selected_regions": 5,
+    "separately_checked_transitions": 4
+  },
+  "negative_controls": [
+    "altered_affine_weight",
+    "nonnormalized_witness"
+  ],
+  "files_sha256": {
+    "examples/relu.py": "c34af91137a3a1da75a0862a44539de677d7f5b33162ff70e675d41f1b9e637b"
+  },
+  "scope": "Exact example arithmetic and complete 1D region propagation; not a mechanized proof, general hull optimizer, or trained-network benchmark."
+}

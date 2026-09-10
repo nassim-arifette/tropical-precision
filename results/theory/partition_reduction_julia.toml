@@ -1,0 +1,10 @@
+partitions_verified = 84
+julia = "1.12.7"
+scope = "Finite rational containment/slice certificates, not universal theorem verification"
+generator_certificates_verified = 364
+complete = true
+arithmetic = "Rational{BigInt}"
+input_sha256 = "e313b7998f9900b82400b2c04a7ac6879965bfe8e91690ebe418682129cf7f01"
+verifier_sha256 = "fd5198731cfb9435074eeff7fa337f2b69284c60c24c81b98fb89c3d6e29a309"
+time_utc = "2026-09-10T01:56:04.964"
+malformed_witnesses_rejected = 7

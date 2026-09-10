@@ -1,0 +1,10 @@
+julia = "1.12.7"
+identities_verified = 6
+scope = "Six polynomial identities by exact unisolvence; not the whole geometric proof"
+malformed_inputs_rejected = 5
+polynomial_evaluations = 102
+complete = true
+arithmetic = "Rational{BigInt}"
+input_sha256 = "a78e663d168a6b240bf700e52fb83e67d6b03b6e234c05196c2ce51af4303b2a"
+verifier_sha256 = "6e096bb24e2e9a66450b1756d874d9e2348e50402da12c4d0bc6654b805f0df0"
+time_utc = "2026-09-10T01:56:07.768"

@@ -1,0 +1,10 @@
+witnesses_verified = 21
+julia = "1.12.7"
+scope = "Finite rational containment/slice certificates, not universal theorem verification"
+complete = true
+arithmetic = "Rational{BigInt}"
+input_sha256 = "4110f0fc72d202376c1eb61150ab6b62e4173fce23c84142388a0444e8ff9f58"
+verifier_sha256 = "fd5198731cfb9435074eeff7fa337f2b69284c60c24c81b98fb89c3d6e29a309"
+gaps = ["1//28", "1//60", "1//28", "1//44", "11//532", "1//108", "11//740", "1//28", "1//60", "1//28", "1//44", "11//532", "1//108", "11//740", "1//28", "1//60", "1//28", "1//44", "11//532", "1//108", "11//740"]
+time_utc = "2026-09-10T01:56:04.641"
+malformed_witnesses_rejected = 7

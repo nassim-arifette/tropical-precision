@@ -1,0 +1,19 @@
+global_partition_controls_verified = 8
+transition_roots_verified = 6
+scalar_intervals_verified = 14971
+arithmetic = "Rational{BigInt}"
+scope = "D10 algebra/root checks and independent D8/D9 control certificates; universal theorem is not mechanized"
+malformed_inputs_rejected = 20
+boundary_cells_verified = 25
+input_sha256 = "e62b57e486be8514429010b0ba4052c64525ec49fb34c6be548df4b3d5d389be"
+time_utc = "2026-09-10T01:56:24.821"
+julia = "1.12.7"
+algebra_evaluations = 74
+complete = true
+budget_roots_verified = 23
+
+[source_sha256]
+"tests/verify_affine_certified.jl" = "32acd5b0f89456cea57cde326fa32b909c19b2d3097df27a9fa663491bdec116"
+"tests/verify_affine_cells.jl" = "7ec656cebd9ab436e4161398f9c41717fac6f5d307e0a7678e7e0f4cb47b4672"
+"tests/verify_affine_boundary.jl" = "eb434a6c939e113f1892bf17e804063d687b2723592137f87aeb3741f361ffa8"
+"tests/verify_witnesses.jl" = "fd5198731cfb9435074eeff7fa337f2b69284c60c24c81b98fb89c3d6e29a309"

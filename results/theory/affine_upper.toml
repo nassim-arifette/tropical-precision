@@ -1,0 +1,7 @@
+schema = "affine-upper-algebra-v1"
+complete = true
+identity_names = ["weighted_denominators", "mixed_cross_multiplication", "mixed_square_decomposition", "positive_remainder", "derivative_numerator", "golden_value"]
+degree_bounds = [[3, 3, 3], [2, 3], [2, 4], [2], [3], [3]]
+evaluations = [64, 12, 15, 3, 4, 4]
+mixed_remainder_lower_bound = "7/128"
+optimum_coefficients = ["-3", "5"]

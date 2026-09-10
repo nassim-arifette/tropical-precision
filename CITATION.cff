@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Tropical Precision"
+abstract: "Exact-arithmetic code for contextual precision and generator budgets in tropical abstract domains, with constructed ReLU certification examples."
+authors:
+  - family-names: Arifette
+    given-names: Nassim
+repository-code: "https://github.com/nassim-arifette/tropical-precision"
+url: "https://github.com/nassim-arifette/tropical-precision"
+license: MIT

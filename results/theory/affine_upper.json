@@ -1,0 +1,84 @@
+{
+  "complete": true,
+  "arithmetic": "exact integers and fractions.Fraction",
+  "algebra": [
+    {
+      "name": "weighted_denominators",
+      "degree_bounds": [
+        3,
+        3,
+        3
+      ],
+      "evaluations": 64
+    },
+    {
+      "name": "mixed_cross_multiplication",
+      "degree_bounds": [
+        2,
+        3
+      ],
+      "evaluations": 12
+    },
+    {
+      "name": "mixed_square_decomposition",
+      "degree_bounds": [
+        2,
+        4
+      ],
+      "evaluations": 15
+    },
+    {
+      "name": "positive_remainder",
+      "degree_bounds": [
+        2
+      ],
+      "evaluations": 3
+    },
+    {
+      "name": "derivative_numerator",
+      "degree_bounds": [
+        3
+      ],
+      "evaluations": 4
+    },
+    {
+      "name": "golden_value",
+      "degree_bounds": [
+        3
+      ],
+      "evaluations": 4
+    }
+  ],
+  "finite_checks": {
+    "coordinate_denominator": 8,
+    "direction_denominator": 12,
+    "point_direction_pairs": 90168,
+    "case_counts": {
+      "all_same_sign": 28392,
+      "negative_min": 25344,
+      "negative_strict_max": 15840,
+      "mixed": 20592,
+      "positive_defect": 716
+    },
+    "grid_maximum": "1/12",
+    "grid_maximizer": {
+      "point": [
+        2,
+        2,
+        6
+      ],
+      "direction": [
+        4,
+        4,
+        -4
+      ]
+    },
+    "scope": "Finite exact checks of the global bound; this grid is not an optimum proof."
+  },
+  "source_sha256": {
+    "src/affine_upper.py": "e30cde2dc9c6696e28f36b02ea3f3b361d495ce2ff6052b69b259c1cbb0332b0",
+    "src/affine_profiles.py": "4d94fd730daccba03028dc2e5243530a41ec873e60319b804aaf9685b01791a7",
+    "src/checks.py": "2414c9b9ff331302d11dc8a7921fc568d78a5f6abab7f3a45f2afee27d408f87"
+  },
+  "scope": "Algebra identities plus finite sector-support checks; the global case proof is written mathematics."
+}
