@@ -1,0 +1,72 @@
+\section{Arbitrary Generators Reduce to Partitions}\label{sec:partitions}
+From now on $E(x)=(x,-x)$, $K_n=[0,1]^n$, and $D_n=\{t\one_n:0\le t\le1\}$. Admissible representatives have the \emph{global} exact slice $E^{-1}P=D_n$ and at most $M$ finite generators. Write
+\begin{equation}\label{eq:minimax}
+L_{\mathcal O}(M,n)=\inf_{\substack{P=\Hu(G),\ |G|\le M\\ E^{-1}P=D_n}}
+\ \sup_{\substack{T\subseteq K_n\text{ finite}\\\varphi\in\mathcal O}}
+\left(\min_{D_n\cup T}\varphi-\min_{J_T^{K_n}(P)}\varphi\right).
+\end{equation}
+We use $\Llip$ for $1$-Lipschitz observations and $\Laff$ for affine observations with $\|w\|_1\le1$. Real generator coordinates are allowed; the budget does not charge bit complexity.
+
+For a partition $0=t_0<\cdots<t_q=1$, define
+\begin{equation}\label{eq:partition-rep}
+\begin{split}
+P_{\boldsymbol t}&=\Hu\{e^0,e^1,c(t_{i-1},t_i):1\le i\le q\},\\
+e^0&=E(0),\quad e^1=E(\one_n),\quad c(a,b)=(a\one_n,-b\one_n).
+\end{split}
+\end{equation}
+Every point of this hull has constant positive and negative blocks, so its slice is contained in $D_n$. Conversely, for $a\le t\le b$,
+\[
+E(t\one_n)=\max\{c(a,b),e^0-t\one_{2n},e^1-(1-t)\one_{2n}\},
+\]
+which proves exactness.
+
+\begin{theorem}[Contained partition representative]\label{thm:partition}
+If $E(D_n)\subseteq P=\Hu\{g^1,\ldots,g^M\}$, then $M\ge3$ and $P$ contains a partition representative with at most $M-2$ cells. For exact $P$, replacing it by that representative weakly improves every contextual observation loss. Consequently the infima in~\eqref{eq:minimax} equal the infima over partitions with at most $M-2$ cells.
+\end{theorem}
+\begin{proof}
+For $g=(u,v)$, define its anchor interval
+$I_g=[0,1]\cap[\max_j u_j,\min_j(-v_j)]$.
+The intervals cover $[0,1]$: a normalized representation of $E(t\one_n)$ has a coefficient-zero generator dominated by that point. Two distinct generators have no positive-length anchor. A generator attaining coordinate $-1$ at $e^0$ satisfies $v_1\ge0$ and $u_1\le v_1$, so its anchor ends at most at zero. A generator attaining coordinate $+1$ at $e^1$ satisfies $u_1\ge1$ and $v_1\le u_1-2$, so its anchor starts at least at one. The two inequalities on $u_1-v_1$ are incompatible for the same generator. The positive-length anchors alone still cover $[0,1]$, since their finite closed union contains the complement of finitely many points. There are at most $M-2$ of them.
+
+Greedily choose an anchor reaching farthest right from the current endpoint. This yields a subordinate partition using at most one cell per chosen anchor. If $[a,b]\subseteq I_g$, then
+\begin{equation}\label{eq:anchor-containment}
+c(a,b)=\max\{g,e^0-b\one_{2n},e^1-(1-a)\one_{2n}\}\in P.
+\end{equation}
+The endpoint vectors belong to $P$ even if they are not displayed generators. This normalized identity proves containment. For exact inputs, both slices equal $D_n$ and joining a contained representative yields a contained result with the same concrete reference minimum. This proves the minimax reduction.
+\end{proof}
+
+Containment holds even for an inexact initial enclosure; comparing losses with different initial slices does not follow. The reduction changes the ambient set. It is not redundancy deletion preserving that set, nor a restriction of competitors to symmetric generators.
+
+\subsection{Local cell costs and the exact Lipschitz law}
+The homogeneous coordinate is covered for $P_{\boldsymbol t}$ exactly on the union of the anchor cubes $[t_{i-1},t_i]^n$. Outside that union there is no positive deficit. Inside one cube, write $u=\min_j x_j$, $v=\max_j x_j$. If $u<v$, the missing positive coordinates are precisely those with $x_j>u$, and the missing negative coordinates those with $x_j<v$. All constant-block generators can supply only extremal coordinates; the two endpoints supply all covered extrema. This description agrees with $P_0$ on each cube, including shared boundaries. Hence either observation class has partition loss equal to the maximum of its cell costs.
+
+By~\eqref{eq:radius} and~\eqref{eq:signed-radii}, the pointwise Lipschitz deficit is
+$\min\{(v-u)/2,u,1-v\}$.
+For $n\ge2$, its maximum over $[a,b]^n$ is
+\begin{equation}\label{eq:lipcell}
+V(a,b)=\min\{(b-a)/2,b/3,(1-a)/3,1/4\}.
+\end{equation}
+Indeed, a deficit at least $\eta$ is feasible iff
+$\max(a,\eta)+2\eta\le\min(b,1-\eta)$, giving these four bounds. Two coordinate values suffice for attainment.
+
+\begin{theorem}[Exact Lipschitz generator law]\label{thm:lipschitz}
+For $n\ge2$ and $M\ge3$,
+\[
+\Llip(M,n)=\frac1{2(M-1)}.
+\]
+An optimal partition with $q=M-2\ge2$ cells has boundary widths $3\delta$ and interior widths $2\delta$, where $\delta=1/[2(q+1)]$. For $q=1$ its cost is $1/4$. For $n=1$ the loss is zero.
+\end{theorem}
+\begin{proof}
+The stated widths give the upper bound by~\eqref{eq:lipcell}. For a partition with $q\le M-2$ cells and maximum cost $\ell<1/4$, each cell $[a,b]$ has $b-a\le2\ell$, or $b\le3\ell$, or $a\ge1-3\ell$. Group the cells satisfying the second condition, then the remaining cells satisfying the third, then all other cells. The first two groups each cover length at most $3\ell$ when nonempty; each remaining cell covers at most $2\ell$. Thus the total length is at most $2(q+1)\ell$. Since it is one, $\ell\ge1/[2(M-1)]$. If $\ell\ge1/4$ the conclusion is immediate. Theorem~\ref{thm:partition} makes the bound exhaustive. Finally $D_1=K_1$, so there are no spurious states after clipping in dimension one.
+\end{proof}
+
+\subsection{A classical partition certificate}\label{sec:partition-certificate}
+Let $W(a,b)$ be any nonnegative cell cost monotone under interval inclusion. Given two weak $q$-cell partitions $\boldsymbol s,\boldsymbol t$, some cell of $\boldsymbol t$ contains the corresponding cell of $\boldsymbol s$: take the first $i\ge1$ with $t_i\ge s_i$. Thus
+\begin{equation}\label{eq:partition-certificate}
+\min_i W(s_{i-1},s_i)\le
+\inf_{\boldsymbol t}\max_i W(t_{i-1},t_i)\le
+\max_i W(s_{i-1},s_i).
+\end{equation}
+An equal-cost partition is therefore globally optimal. The lower certificate must have exactly $q$ cells; a partition with fewer cells suffices only for the upper bound. Weak partitions allow zero widths and encode smaller budgets by repeated knots.
+
+This interval-containment and balancing principle is classical~\cite[Lemma~2.12]{tilli2019}. We use sufficiency of equal costs, not uniqueness or necessity that every optimizer equalize. Non-strictly monotone costs may have plateaus. The specific work below is to compute the contextual cell cost and construct a feasible equal-cost partition.

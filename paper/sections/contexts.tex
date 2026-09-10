@@ -1,0 +1,110 @@
+\subsection{An exact formula for a fixed observation}
+A coordinate $i$ is \emph{covered by $P$ at $x$} when some generator satisfies
+\[
+(a_j-a_i)\cdot x\ge g_j^k-g_i^k\qquad(0\le j\le p).
+\]
+Let $I_P(x)$ be the uncovered coordinates, with $g_0^k=0$. Its witness fibers are
+\begin{equation}\label{eq:fibers}
+F_i(x)=\{t\in K:(a_j-a_i)\cdot(t-x)\le0\ (0\le j\le p)\}.
+\end{equation}
+Each fiber is compact and contains $x$. By~\eqref{eq:sectors},
+\begin{equation}\label{eq:missing}
+x\in J_T^K(P)\quad\Longleftrightarrow\quad
+T\cap F_i(x)\ne\varnothing\quad\hbox{for all }i\in I_P(x).
+\end{equation}
+The coverage test may use the displayed generators: a coordinate supplied by a combination from $P$ is supplied by an attaining generator in that combination.
+
+\begin{theorem}[Worst loss of a fixed observation]\label{thm:observation}
+For arbitrary linear $A$, nonempty compact $K$, finite $P$, and nonempty $S=K\cap A^{-1}P$, put $m_S=\min_S\varphi$. Then
+\begin{equation}\label{eq:observation}
+\sup_{T\subseteq K\text{ finite}}\ell_\varphi(P,T)
+=\max_{x\in K}\left[\min\left\{m_S,
+        \min_{i\in I_P(x)}\max_{t\in F_i(x)}\varphi(t)\right\}-\varphi(x)\right].
+\end{equation}
+Here $\min\varnothing=+\infty$. The maximum is nonnegative and is attained by a context with at most $p+1$ points.
+\end{theorem}
+\begin{proof}
+Write $d_\varphi(x)$ for the bracketed expression. Given $T$, choose a minimizer $x$ on $J_T^K(P)$. Each missing coordinate has a witness $t_i\in T\cap F_i(x)$. Therefore
+\[
+\min_{S\cup T}\varphi\le
+\min\{m_S,\min_{i\in I_P(x)}\max_{F_i(x)}\varphi\},
+\]
+which bounds the loss by $d_\varphi(x)$. Conversely, for a fixed $x$, choose a maximizer of $\varphi$ on each missing fiber. The resulting $T$ has at most $p+1$ points, places $x$ in the join, and has concrete minimum equal to the bracket's first term. Its loss is at least $d_\varphi(x)$.
+
+It remains to justify the maximum despite changing coverage. The graph of $F_i$ is closed in $K\times K$, hence $b_i(x)=\max_{F_i(x)}\varphi$ is upper semicontinuous. The set where coordinate $i$ is covered is closed, being a finite union of closed inequality systems. Replace $b_i$ by $\max_K\varphi$ on that closed set. The replacement is still upper semicontinuous and does not affect the minimum with $m_S$. Taking the minimum over all coordinates and subtracting $\varphi$ proves upper semicontinuity of $d_\varphi$. At a minimizer on $S$, all coordinates are covered and $d_\varphi=0$. Compactness and the two inequalities above prove the statement.
+\end{proof}
+
+No convexity of $K$ or injectivity of $A$ enters this proof. Pointwise values $d_\varphi(x)$ may be negative; only their maximum is nonnegative.
+
+\begin{corollary}[Affine and Lipschitz observations]\label{cor:observations}
+For affine observations, additive constants cancel. Their worst loss with $\|w\|_1\le1$ is
+\begin{equation}\label{eq:affine-support}
+\loss_{\rm aff}(P)=\max_{\substack{x\in K\\\|w\|_1\le1}}
+\min\left\{\min_{s\in S}w\cdot(s-x),
+   \min_{i\in I_P(x)}\max_{t\in F_i(x)}w\cdot(t-x)\right\}.
+\end{equation}
+For all $1$-Lipschitz observations on $K$, the worst loss is
+\begin{equation}\label{eq:radius}
+\loss_{\rm Lip}(P)=\max_{x\in K}
+\min\left\{\dist_\infty(x,S),\min_{i\in I_P(x)}r_i(x)\right\},
+\quad r_i(x)=\max_{t\in F_i(x)}\norm{t-x}.
+\end{equation}
+Both maxima and finite witnessing contexts are attained.
+\end{corollary}
+\begin{proof}
+Substitute $\varphi(t)=w\cdot t$ in Theorem~\ref{thm:observation}. The same upper semicontinuity argument on the compact product with the unit $1$-norm ball gives attainment. For a Lipschitz observation, each difference $\varphi(t)-\varphi(x)$ is bounded by $\norm{t-x}$, as is the difference to a nearest point of $S$. At a maximizing $x$, the radial function $\varphi(t)=\norm{t-x}$ attains every bound simultaneously. Fiber radii have the same compactness and upper semicontinuity properties.
+\end{proof}
+
+For the signed lift $E(x)=(x,-x)$ and a box $K=[l,u]$, the fibers have a simple form. $F_0(x)=\{x\}$; in $F_{+j}(x)$ the displacement $h=t-x$ has $h_j=\norm h\ge0$, and in $F_{-j}(x)$ it has $-h_j=\norm h\ge0$. Consequently
+\begin{equation}\label{eq:signed-radii}
+r_0(x)=0,\qquad r_{+j}(x)=u_j-x_j,\qquad r_{-j}(x)=x_j-l_j.
+\end{equation}
+A missing homogeneous coordinate prevents positive loss for either class.
+
+\subsection{Exact states and unbounded contexts}\label{sec:unbounded}
+The bounded-context formula also clarifies why current-state exactness is insufficient. We give a structural comparison for contexts in all of $\R^n$; its distant witnesses cannot be used unchanged in a fixed invariant.
+
+Define the pulled-back cones and interior-row indices
+\[
+C_i^A=\{h:(a_j-a_i)\cdot h\ge0\ \forall j\},\qquad
+I_A=\{i:a_i\in\operatorname{int}_{\R^n}\conv\{a_0,\ldots,a_p\}\}.
+\]
+Normal-cone duality gives $i\in I_A$ exactly when $C_i^A=\{0\}$. The interior is ambient, not relative. By sectors,
+$A^{-1}\Hu(AS)=\bigcap_i(S+C_i^A)$ for compact nonempty $S$.
+Thus $A^{-1}\Hu(AS)=S$ for every such $S$ exactly when $I_A\ne\varnothing$: sufficiency is immediate; otherwise choose nonzero $h_i\in C_i^A$ and $S=\{-h_i\}_i$, whose reconstruction contains zero although $S$ does not. When $I_A\ne\varnothing$, $A$ is injective and $\Hu(AS)$ is finitely generated exactly when $S$ is finite. Indeed, a generator supplying an interior coordinate of $As$ must equal $As$: expressing it as a combination of points of $AS$, an attaining operand has displacement in $C_i^A=\{0\}$. This concerns the \emph{ideal hull}, not larger finite representatives with the same slice.
+
+For $P=\Hu(G)$ and $S=A^{-1}P\ne\varnothing$, put
+\begin{align}
+Q_i(g)&=\{x:(a_j-a_i)\cdot x\ge g_j-g_i\ \forall j\},\nonumber\\
+C_A(P)&=\bigcap_{i\in I_A}\ \bigcup_{g\in G}Q_i(g).\label{eq:defect-set}
+\end{align}
+If $I_A\ne\varnothing$, this is a compact set containing $S$, since each nonempty $Q_i(g)$ has recession cone $\{0\}$ for $i\in I_A$.
+
+\begin{proposition}[Unbounded concrete-context fidelity]\label{prop:fidelity}
+Assume $I_A\ne\varnothing$. For every finite $T\subseteq\R^n$,
+\[
+S\cup T\subseteq A^{-1}\Hu(P\cup AT)\subseteq C_A(P)\cup T.
+\]
+Every $x\in C_A(P)\setminus S$ can be exposed by at most $p+1-|I_A|$ context points at any prescribed positive infinity-norm distance from $x$. Hence all concrete-context joins are exact iff $C_A(P)=S$, and the worst Lipschitz minimum loss is
+\[
+\max_{x\in C_A(P)}\dist_\infty(x,S).
+\]
+\end{proposition}
+\begin{proof}
+If a joined point $x$ is not in $T$, an interior coordinate cannot be supplied by a context: its fiber in $\R^n$ is $\{x\}$. All such coordinates must be covered by $P$, proving the upper inclusion. For a noninterior index $i$, choose $h_i$ with $\norm{h_i}=1$ and
+$a_i\cdot h_i=\max_j a_j\cdot h_i\ge0$. Then $t_i=x+Rh_i$ supplies coordinate $i$ with coefficient $-R a_i\cdot h_i\le0$. The covered interior coordinates are supplied by $P$; coordinate zero is supplied by one of these sources, so normalization holds. This proves exposure. For the loss upper bound, any spurious point is in $C_A(P)$ and lies within the displayed distance of $S$. For equality, choose a maximizing $x$, use $R$ at least this distance, and observe with $\varphi(z)=\norm{z-x}$.
+\end{proof}
+
+For the signed lift, $I_E=\{0\}$ and $C_E(P)=\bigcup_{(u,v)\in G}[u,-v]$, omitting empty boxes. Finite representatives faithful for all concrete contexts therefore exist exactly for finite unions of axis-aligned boxes. For a box $[l,u]$, take the ambient box $[l,u]\times[-u,-l]$: it has a finite tropical generating set consisting of its lower corner and one point raising each coordinate separately to its upper bound. Its slice and its defect set both equal $[l,u]$. Joining these representatives handles a finite union. A nonconstant continuous graph on a connected box is not such a union: any box contained in a graph has constant output, and a finite continuous image of a connected set is a point. Nevertheless $P_0$ represents the diagonal exactly. Fidelity is the stronger requirement.
+
+Concrete and abstract operands are also different. With $A(t)=(t,2t,3t)$, take
+\[
+P=\Hu\{(0,0,0),(1,1,2)\},\quad
+Q=\Hu\{(1,2,3),(0,1,1)\}.
+\]
+Here $I_A=\{1,2\}$, $C_A(P)=A^{-1}P=\{0\}$ and $C_A(Q)=A^{-1}Q=\{1\}$. Both are faithful for every concrete context. But
+\[
+\max\{(1,1,2)-\tfrac12\one_3,(0,1,1)\}
+=(\tfrac12,1,\tfrac32)=A(\tfrac12).
+\]
+Their abstract join is inexact. If there is just one interior index, the union in~\eqref{eq:defect-set} does commute with the join, giving a sufficient condition for faithful abstract joins. This is not a classification for several interior indices.

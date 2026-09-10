@@ -1,0 +1,21 @@
+\subsection{Realizing finite contexts on a connected input}
+A continuous network cannot have the disconnected set $D_n\cup T$ as its full image on an interval. The construction below includes the connecting paths and checks them separately.
+
+\begin{theorem}[Realization of an affine join obstruction]\label{thm:relu-realization}
+Let $P$ have global exact slice $E^{-1}P=D_n$, let $T=\{t_1,\ldots,t_r\}\subset K_n$ be nonempty, and suppose $z^\star\in J_T^{K_n}(P)$ satisfies
+\[
+c_0-w^\top z^\star=\delta>0,\qquad c_0=\min_{z\in D_n\cup T}w^\top z.
+\]
+For every $0<\mu<\delta$, a feedforward ReLU network of architecture $1\to(2r+1)\to n\to2$ on $[0,1]$ has exact minimum classification margin $\mu$. A finite input partition has one region with hidden image $D_n$ and $r$ constant regions with images $t_1,\ldots,t_r$. Pooling these regions through $J_T^{K_n}(P)$ gives a negative abstract margin even with exact minimization. The transition regions have affine hidden images and can be certified separately by their endpoints.
+\end{theorem}
+\begin{proof}
+Set $q=2r+1$, $v_0=0$, $v_1=\one_n$, and $v_{2j}=v_{2j+1}=t_j$ for $1\le j\le r$. Let $H:[0,q]\to K_n$ interpolate these vertices at integer knots. Its first segment traverses $D_n$; $[2j,2j+1]$ is constant at $t_j$. Every vertex has $w^\top v_i\ge c_0$, so affinity preserves this inequality on all connecting segments. The minimum $c_0$ is attained, since a diagonal affine minimum occurs at an endpoint.
+
+With $d_i=v_{i+1}-v_i$ and $\sigma(s)=\max(0,s)$, the exact hinge formula is
+\begin{equation}\label{eq:relu-hinge}
+H(qu)=v_0+d_0\sigma(qu)+\sum_{i=1}^{q-1}(d_i-d_{i-1})\sigma(qu-i).
+\end{equation}
+As a function of $s=qu$, it starts at $v_0$ and has slope $d_i$ on the $i$th knot interval. Use these $q$ hinges as the first hidden layer. The second affine map computes $H(qu)$; its ReLU is the identity because $H(qu)\in K_n$. Choose logits $f_1(u)=\mu-c_0+w^\top H(qu)$ and $f_2(u)=0$. The true minimum margin is $\mu$; the pooled state contains $z^\star$ with margin $\mu-\delta<0$. Transition minima are endpoint minima. No transition state is discarded or silently treated as an element of $T$.
+\end{proof}
+
+Theorem~\ref{thm:observation} supplies at most $2n+1$ witnesses for a signed-lift obstruction, hence first-layer width at most $4n+3$. This is a realizability consequence. It does not turn $\forall P\,\exists(T,w)$ into one network defeating every network-dependent representation strategy. The fixed examples make their stronger, restricted quantifiers explicit.

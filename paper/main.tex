@@ -1,0 +1,34 @@
+\input{preamble}
+\hypersetup{pdftitle={Contextual Precision in Tropical Abstract Domains: Sharp Generator Budgets and ReLU Certificates},pdfauthor={Nassim Arifette}}
+\title{Contextual Precision in Tropical Abstract Domains:\\Sharp Generator Budgets and ReLU Certificates}
+\input{authors}
+\date{September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Exact representation of a state does not ensure precision after a tropical join. We calculate worst contextual observation loss for normalized max-plus hulls under a linear consistency slice. For an arbitrary compact invariant and continuous observation, compact witness fibers give an attained formula using finitely many context points. For the signed diagonal, every finite enclosure contains a canonical partition representative with no larger generator budget. This makes the resulting minimax laws exhaustive over arbitrary ambient generators. The optimal Lipschitz loss is $1/[2(M-1)]$; affine losses have a different dimension dependence and an exact all-budget formula for dimensions at least four. We apply the theory to continuous rational ReLU classifiers. Under a specified hidden-state merge before a nonlinear suffix, every exact three-generator diagonal summary loses the classification certificate, while four generators recover the exact positive margin. An affine-readout contract converts generator budgets into sufficient margin guarantees. We also realize worst contextual losses by continuous ReLU paths with finite axial context representations, keeping the dependence on the chosen representative explicit. Written proofs and exact rational checks support these claims; no performance advantage on trained networks is asserted.
+\end{abstract}
+\noindent\textbf{Keywords:} abstract interpretation; tropical convexity; contextual precision; neural network certification.
+\input{sections/introduction}
+\input{sections/foundations}
+\input{sections/nonlinear_application}
+\section{Exact Contextual Loss and Fidelity}
+\input{sections/contexts}
+\input{sections/partitions}
+\input{sections/affine}
+\input{sections/budgets}
+\input{sections/relu_application}
+\input{sections/evidence}
+\label{end:main}
+\clearpage
+\input{sections/references}
+\clearpage
+\appendix
+\renewcommand{\theHsection}{appendix.\Alph{section}}
+\renewcommand{\theHsubsection}{\theHsection.\arabic{subsection}}
+\input{appendices/all_cells}
+\input{appendices/dimension_three}
+\input{appendices/fixed_dictionary}
+\input{appendices/neural_transfer}
+\input{appendices/reproduction}
+\end{document}

@@ -1,0 +1,31 @@
+\section{Normalized Hulls and Contextual Observations}\label{sec:contexts}
+All state and generator coordinates are finite real numbers. We use the infinity norm for geometry. For $U\subseteq\R^p$, a normalized tropical combination is
+\[
+z=\max_{1\le k\le r}(u^k+\lambda_k\one_p),\qquad
+u^k\in U,\quad \lambda_k\le0,\quad \max_k\lambda_k=0.
+\]
+Its finite-combination hull is $\Hu(U)$. Inactive coefficients may be $-\infty$ and may be omitted. The homogeneous coordinate is $z_0=u_0^k=0$; it records the normalization. For a nonempty compact $U$, this hull is compact: at most $p+1$ operands suffice, by retaining one attaining operand per coordinate including coordinate zero. If $U\subseteq[-R,R]^p$, coefficients below $-2R$ can be raised to $-2R$ without changing the maximum. The hull is therefore a continuous image of a compact parameter set. No additional closure is needed here.
+
+Let $A:\R^n\to\R^p$ have rows $a_1,\ldots,a_p$, and set $a_0=0$. The concretization of $P$ is $A^{-1}P$. A finite representative is $P=\Hu\{g^1,\ldots,g^M\}$. Fix a nonempty compact invariant $K$ with nonempty $S=K\cap A^{-1}P$. For finite $T\subseteq K$, including $T=\varnothing$, define
+\begin{equation}\label{eq:join-loss}
+J_T^K(P)=K\cap A^{-1}\Hu(P\cup AT),\qquad
+\ell_\varphi(P,T)=\min_{S\cup T}\varphi-\min_{J_T^K(P)}\varphi.
+\end{equation}
+The function $\varphi:K\to\R$ is continuous. Both minima exist and the loss is nonnegative, since $S\cup T\subseteq J_T^K(P)$. This baseline changes if the initial slice changes; comparisons of representatives below always keep it fixed.
+
+\paragraph{Sector convention.}
+For $i=0,\ldots,p$, let
+\[
+\Sigma_i=\{v\in\R^p:v_i\le v_j\ (0\le j\le p)\},\qquad v_0=0.
+\]
+The classical sector criterion~\cite[Prop.~1.1]{hill2020} reads
+\begin{equation}\label{eq:sectors}
+\Hu(U)=\bigcap_{i=0}^p(U+\Sigma_i).
+\end{equation}
+For completeness, $z\in u+\Sigma_i$ means that $u+(z_i-u_i)\one_p\le z$, with equality in coordinate $i$ and coefficient $z_i-u_i\le0$. One such operand per coordinate, including zero, yields a normalized combination. The converse follows by choosing an attaining operand. The sign convention matters in pulling this criterion back through $A$.
+
+For the signed lift write $E(x)=(x,-x)$, $K_n=[0,1]^n$, and $D_n=\{t\one_n:0\le t\le1\}$. For this diagonal use the coarse representative
+\begin{equation}\label{eq:p0}
+P_0=\Hu\{E(0),E(\one_n),(0_n,-\one_n)\},
+\end{equation}
+whose exactness follows from the partition identity in Section~\ref{sec:partitions}.

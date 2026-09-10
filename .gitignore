@@ -9,3 +9,12 @@ Thumbs.db
 /.local/
 /arxiv/
 /output/
+
+# Local LaTeX build files; paper/main.pdf is intentionally versioned.
+/paper/*.aux
+/paper/*.log
+/paper/*.out
+/paper/*.toc
+/paper/*.fls
+/paper/*.fdb_latexmk
+/paper/*.synctex.gz

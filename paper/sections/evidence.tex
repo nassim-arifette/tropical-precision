@@ -1,0 +1,21 @@
+\section{Evidence, Related Work, and Limits}\label{sec:evidence}
+\subsection{What the computations establish}
+Nine exact Python studies with separate Julia checkers cover seven finite-invariant problems (1,248 contexts, 46 observations), 84 partition extractions, 280 witnesses, adversarial affine grids, and rational interval covers. The largest grid contains 2,522,184 point/direction pairs, including unequal coefficients, zeros and covered extrema. These finite controls do not prove continuous quantifiers.
+
+Scalar upper certificates cover every branch using the all-cell reduction and its proved $2$-Lipschitz bound (Appendix~\ref{app:allcells}); samples alone would not suffice. Root isolation and polynomial identities check the budget algebra. All mathematical payloads were reproduced from a fresh directory on the development host, not on another platform or by an external team.
+
+A separate rational regression checks both neural examples' complete affine pieces, join witnesses, suffix and margins, including the cover in Proposition~\ref{prop:nonlinear-recovery}. Altered weights and nonnormalized coefficients are rejected. The affine guarantee invokes the budget theorem; the checker neither proves it nor optimizes arbitrary hulls. These examples do not establish trained-network performance. A feasible minimization incumbent is an upper bound, not a certification lower bound.
+
+\subsection{Relation to existing theory and neural analysis}
+\paragraph{Tropical abstractions and quantitative precision.}
+Goubault et al.~\cite{goubault2021} establish tropical neural abstractions, including signed octagonal representations and subdivision. We study the precision of a specified later join; our example does not refute their soundness. Octagonal coordinates~\cite{mine2006}, tropical sectors~\cite{hill2020}, and max-plus convex geometry~\cite{gaubert2007} are classical ingredients. Disjunctive completion~\cite{giacobazzi1998} and exact join detection~\cite{bagnara2010} also concern preserving unions. Quantitative incompleteness~\cite{campion2023} and abstract Lipschitz continuity~\cite{campion2026} supply broader semantic perspectives. Our specialization gives attained contextual losses, an exhaustive arbitrary-generator reduction, and exact diagonal budget laws.
+
+\paragraph{Other neural verification mechanisms.}
+DeepPoly~\cite{singh2019} provides an implemented neural abstract domain with affine/ReLU transformers and refinement. We neither execute it nor transfer our failure to it. Multi-neuron convex-relaxation expressiveness~\cite{mao2026} distinguishes a network's representation from its function and studies different completeness/resource quantifiers. Here the prefix is exact and the modeled loss occurs at a signed tropical merge. Recent bounds on convex neural-relaxation error~\cite{papamichail2026} concern relaxed network constraints and output divergence, rather than a generator-limited signed-state join. None of these differences alone establishes priority for every auxiliary result.
+
+\paragraph{Approximation and pruning.}
+Max-plus approximation of smooth semiconvex functions~\cite{gaubert2011}, min-max pruning~\cite{mceneaney2011,gaubert2012}, and polyhedral approximation and quantization~\cite{bulaich2025} are close neighbors. Their objectives are not identified with our worst concrete-context loss after consistency slicing. We claim no new general pruning principle. Interval equalization~\cite{tilli2019} and scalar Lipschitz optimization~\cite{shubert1972} are used explicitly as classical tools. The exact cell cost and its singleton transition are problem-specific. Full-text comparison with the 2012 min-max paper remains incomplete in our audit, so universal priority is not claimed.
+
+Appendix~\ref{app:dictionary} gives a separate fixed-dictionary ordinary-union theorem, using templates~\cite{colon2011} and Hoffman bounds~\cite{pena2018}. Its relation to shape covers~\cite{alexa2021}, box and fixed-direction approximations~\cite{bemporad2004,rieger2019}, and piecewise-affine error bounds~\cite{dolgopolik2023} does not identify a disjunct budget with a tropical-generator budget.
+
+\input{sections/conclusion}

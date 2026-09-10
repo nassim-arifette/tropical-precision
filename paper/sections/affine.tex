@@ -1,0 +1,114 @@
+\section{Affine Observations: Coefficients and Cell Costs}\label{sec:affine}
+Let $d_n(x,w)$ denote the pointwise expression in~\eqref{eq:affine-support} for $P_0$, $S=D_n$, $K=K_n$, and define
+\begin{equation}\label{eq:affine-cell}
+W_n(a,b)=\max_{\substack{x\in[a,b]^n\\\|w\|_1\le1}}d_n(x,w).
+\end{equation}
+The partition loss is $\max_i W_n(t_{i-1},t_i)$. In particular, all contexts still range over the \emph{global} cube; restricting them to the cell would define a different problem. We have $0\le W_n(a,b)\le(b-a)/2$ by the Lipschitz bound, and $W_n$ is monotone under interval inclusion.
+
+\subsection{A bound that includes covered extrema}
+Suppose $\delta=d_n(x,w)>0$. Homogeneity lets us normalize $\|w\|_1=1$. Both signs must occur, since otherwise the diagonal baseline is nonpositive. Write the positive coefficients as $a_i>0$, the negative magnitudes as $c_j>0$, and
+\[
+A=\sum_i a_i,\quad C=\sum_j c_j=1-A,\quad p=|\{i:w_i>0\}|,\quad k=|\{j:w_j<0\}|.
+\]
+Zeros remain in the geometry; $p+k\le n$.
+
+\begin{lemma}[Uniform coefficient inequalities]\label{lem:coefficient}
+Every nonzero coefficient has magnitude strictly less than $1/2$, and
+\begin{equation}\label{eq:coefficients}
+\delta\le(1-2a_i)x_i,\qquad
+\delta\le(1-2c_j)(1-x_j).
+\end{equation}
+If $u=\sum_i a_ix_i/A$, $v=\sum_j c_jx_j/C$, $\alpha=1-2A/p$, $\beta=1-2C/k$, and $m=\min(A,C)$, then
+\begin{equation}\label{eq:means}
+\delta\le\alpha u,\qquad
+\delta\le\beta(1-v),\qquad
+\delta\le m-Au-C(1-v).
+\end{equation}
+In particular $u<v$.
+\end{lemma}
+\begin{proof}
+If the negative $i$-sector is missing, a witness displacement satisfies $h_i=-r$, $|h_j|\le r$, $0\le r\le x_i$. Its affine increment is at most $(1-2a_i)r$. Thus positivity forces $a_i<1/2$ and yields the first inequality. If that sector is covered, $x_i=\max_jx_j$. The diagonal baseline gives
+\[
+\delta\le\min(0,A-C)-w\cdot x
+\le-w\cdot x\le(C-a_i)x_i\le(1-2a_i)x_i.
+\]
+This handles the extremum without invoking a missing-sector constraint. Reflection $x\mapsto\one_n-x$, $w\mapsto-w$ proves the negative-coefficient inequality.
+
+The function $f(t)=t/(1-2t)$ is convex on $(0,1/2)$, with $f''(t)=4/(1-2t)^3$. Multiplying $x_i\ge\delta/(1-2a_i)$ by $a_i$ and summing yields $Au\ge\delta A/\alpha$. The negative case is identical. The third inequality in~\eqref{eq:means} is the exact diagonal baseline. It is positive only if $u<v$.
+\end{proof}
+
+At most two coefficients cannot have total magnitude one with each magnitude less than $1/2$. Thus $\Laff(M,n)=0$ for $n\le2$, unlike the Lipschitz loss when $n=2$.
+
+\begin{theorem}[Smallest-budget dimension law]\label{thm:dimension}
+For $M=3$,
+\[
+\Laff(3,n)=
+\begin{cases}
+0,&n\le2,\\
+(5\sqrt5-11)/2,&n=3,\\
+\displaystyle\frac1{4+1/(p-1)+1/(k-1)},&
+n\ge4,\quad p=\lfloor n/2\rfloor,\ k=\lceil n/2\rceil .
+\end{cases}
+\]
+The representative $P_0$ attains these values.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:partition} reduces three generators to the sole cell $[0,1]$. Summing~\eqref{eq:coefficients} with the diagonal baseline and applying Jensen gives
+\begin{equation}\label{eq:jensen-global}
+\delta\le\frac{\min(A,C)}{1+\sum_i f(a_i)+\sum_j f(c_j)}
+\le\frac{\min(A,C)}{1+A/(1-2A/p)+C/(1-2C/k)}.
+\end{equation}
+If one sign group is a singleton of magnitude $c<1/2$, its term alone gives
+\[
+\delta\le\frac{c(1-2c)}{2(1-c)^2}\le\frac18;
+\]
+the difference from $1/8$ is $(1-3c)^2/[8(1-c)^2]$. In dimension three, $p=2,k=1$ up to reflection, and the full bound is $c^2(1-2c)/(1-c)^2$. With $r=c/(1-c)$ this becomes $r^2(1-r)/(1+r)$, whose derivative has the sign of $1-r-r^2$. Its maximum is the stated golden-ratio value. An attaining context is given in Appendix~\ref{app:three}.
+
+For $p,k\ge2$ and $A\le1/2$, the reciprocal of the last expression in~\eqref{eq:jensen-global} is
+\[
+\frac1A+\frac p{p-2A}+\frac{k(1-A)}{A(k-2+2A)}.
+\]
+The first two terms have derivative at most $-4+2p/(p-1)^2\le0$, and the third is strictly decreasing. Reflection gives the optimum at $A=C=1/2$. Its value is $U(p,k)=1/[4+1/(p-1)+1/(k-1)]$, increasing in each count and largest at balanced counts totaling $n$.
+
+To attain it, put $\alpha=1-1/p$, $\beta=1-1/k$, $\delta=U(p,k)$, $u=\delta/\alpha$, and $v=1-\delta/\beta$. Then $u<1/2<v$, $v-u=2\delta$, and choose
+\[
+x=(u^p,v^k),\qquad w=((1/(2p))^p,(-1/(2k))^k).
+\]
+Here exponents denote repeated coordinates. For each low coordinate, use a displacement $-u$ at that coordinate, $+u$ at other low coordinates, and $-u$ at high coordinates. For each high coordinate, use $r=1-v$ there and at low coordinates, and $-r$ at the other high coordinates. These contexts stay in the cube and have affine value zero; their support increments are $\alpha u=\beta r=\delta$. They supply all missing sectors. The endpoints and the coefficient-zero anchor supply the rest, so the loss is $\delta$. In particular two signs of each kind attain $1/6>1/8$, excluding singleton optima when $n\ge4$.
+\end{proof}
+
+\subsection{Interior and boundary cells}
+\begin{lemma}[Interior cells]\label{lem:interior}
+If $h=b-a\le\min(a,1-b)$, then
+\[
+W_3(a,b)=\frac{h\max(a,1-b)}{2-h},\qquad
+W_n(a,b)=h/2\quad(n\ge4).
+\]
+\end{lemma}
+\begin{proof}
+For $n\ge4$ the upper bound is distance to the diagonal. For attainment take two low coordinates $a$, two high coordinates $b$, coefficients $(1,1,-1,-1)/4$, and zero coefficients elsewhere. Put other coordinates at $a$. In each missing sector, a displacement of radius $h$ stays in the cube. Force the required coordinate to the appropriate extremum and move other positive-weight coordinates up and negative-weight coordinates down. The affine increment is $h/2$ if the forced coordinate has nonzero weight, and $h$ otherwise. The baseline is $h/2$, so~\eqref{eq:affine-support} proves equality. The dimension-three calculation is provided in Appendix~\ref{app:three}; it uses~\eqref{eq:coefficients}, not an assumed symmetry of the maximizer.
+\end{proof}
+
+Boundary cells require singleton signs even when $n\ge4$. We give the reduction needed for their exact evaluation. It also explains the all-cell scalar formulas in Appendix~\ref{app:allcells}.
+
+\begin{lemma}[Boundary reduction]\label{lem:boundary-reduction}
+For $0<b\le1/2$, let $d=n-3\ge0$, $0<c<1/2$, $A=1-c$, $\alpha=1-2A/(n-1)$, and $\gamma=1-2c$. Then $W_n(0,b)$ is the maximum of
+\begin{align}
+&\frac{(n-3)b}{3n-8}\quad(n\ge4),\label{eq:balanced-boundary}\\
+&\max_{0\le s\le b}\frac{s(b-s)}{2-s},\label{eq:positive-boundary}\\
+&\max_{0<c<1/2}\min\left\{\frac{\alpha cb}{\alpha+A},
+                  \frac{c}{1+A/\alpha+c/\gamma}\right\}.\label{eq:negative-boundary}
+\end{align}
+All positive branch values have two-level attainers with equal coefficients within each sign group.
+\end{lemma}
+\begin{proof}
+The averages in~\eqref{eq:means} lie in $[0,b]$. If both sign groups have at least two coefficients, ignore the second inequality and increase $v$ to $b$. For $A\ge1/2$ the remaining bound is $\alpha Cb/(A+\alpha)$, decreasing with $A$. For $A\le1/2$, put $B=A-C(1-b)$. The bound is the positive part of $\alpha B/(A+\alpha)$, increasing with $A$ wherever positive: with $e=2/p$, its derivative numerator is $(2-b)(\alpha^2-eA^2)+(1-b)>0$, since $\alpha^2-eA^2\ge1-2A$. Hence $A=C=1/2$ is best. Increasing $p$ to $n-2$ gives~\eqref{eq:balanced-boundary}. It is attained with $u=b/(1+2\alpha)$, $v=b$, $p=n-2$, $k=2$: low missing supports are $\alpha u$, high missing supports are $1/4$, and the baseline is $(b-u)/2$.
+
+If the positive group is a singleton, $A<1/2$ and $\alpha=1-2A$. The same relaxation is attained at $u=B/(1-A)$ when $B>0$, $v=b$, splitting the negative mass equally. Set $s=1-A/(1-A)$. A positive value requires $0<s<b$ and becomes $s(b-s)/(2-s)$. High-sector supports do not bind: their excess over the baseline is $C(1-1/k)-A(v-u)>0$, because $C>A$, $k\ge2$, and $v-u\le1/2$.
+
+For a negative singleton, let $C=c<1/2$ and allocate any unused coordinates to the positive group, so $p=n-1$. For $\delta>0$, \eqref{eq:means} is feasible exactly when
+\[
+\delta+A\max(0,\delta/\alpha)+c\max(1-b,\delta/\gamma)\le c.
+\]
+Expanding the maxima leaves the two bounds in~\eqref{eq:negative-boundary}; the other two bounds $cb$ and $\gamma c/A$ are weaker. Conversely set $u=\delta/\alpha$ and $v=\min(b,1-\delta/\gamma)$. The baseline forces $0\le u<v\le b$. Equal positive coefficients at $u$ and the negative singleton at $v$ have missing supports $\alpha u$ and $\gamma(1-v)$, so they attain the bound. These cases exhaust all sign patterns. Positivity of every coefficient bound handles zeros and excludes groups of two singletons.
+\end{proof}

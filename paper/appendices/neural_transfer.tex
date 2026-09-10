@@ -1,0 +1,56 @@
+\section{Box Contexts and Continuous Neural Realizations}\label{app:neural-transfer}
+This appendix makes precise the transfer from finite concrete contexts to finite representations of continuous hidden paths. The normalized hull and all coordinates remain finite; degenerate boxes are permitted. No result here identifies arbitrary exact abstract operands with their slices.
+
+\begin{lemma}[A box representative is safe as an ambient operand]\label{lem:box-context}
+For a nonempty box $B=\prod_j[l_j,h_j]$, set $U(B)=B\times(-B)$. For every ambient set $P\subseteq\R^{2n}$,
+\[
+E^{-1}\Hu(P\cup U(B))=E^{-1}\Hu(P\cup E(B)).
+\]
+The equality persists after clipping. The box $U(B)$ has a finite normalized tropical representation with at most $2k+1$ generators, where $k$ is the number of nondegenerate coordinates of $B$.
+\end{lemma}
+\begin{proof}
+Only the left-to-right inclusion needs proof. Flatten a finite normalized combination for $E(x)$ and retain an attaining term for each coordinate, including homogeneous coordinate zero. Consider a term $(u,-v)+\lambda\one_{2n}\le E(x)$ from $U(B)$, with $u,v\in B$, $\lambda\le0$. For each $j$,
+\[
+u_j\le x_j-\lambda,\qquad v_j\ge x_j+\lambda.
+\]
+Therefore $[l_j,h_j]\cap[x_j+\lambda,x_j-\lambda]$ is nonempty. Choose a point $b$ in the product of these intersections. If the term attains positive coordinate $i$, impose $b_i=u_i=x_i-\lambda$; this value lies in the intersection. For a negative-coordinate attainer impose $b_i=v_i=x_i+\lambda$. Then $E(b)+\lambda\one_{2n}\le E(x)$ retains the selected equality. If $\lambda=0$, the original inequalities imply $x\in B$, so $E(x)$ itself supplies a normalized term. Keep attaining terms from $P$ unchanged. The replacements still attain every coordinate and normalization, proving the identity.
+
+An ordinary box $[L,U]\subset\R^d$ is the normalized hull of its lower corner $L$ and the vectors obtained by raising just one varying coordinate to its upper endpoint. For any point $y$ in the box, use coefficient zero on $L$ and coefficient $y_i-U_i\le0$ on the $i$th raised vector. Their maximum is $y$. Applied to $B\times(-B)$, this gives $2k+1$ generators. The reverse inclusion follows from the coordinate bounds.
+\end{proof}
+
+The same replacement proof works for a finite union of boxes, each with its own representative. This stronger operand statement is proved here directly; concrete-context fidelity alone would not justify it.
+
+\begin{lemma}[Compact concrete contexts add no larger loss]\label{lem:compact-context}
+Fix a finite exact diagonal representative $P$ and continuous observation $\varphi$ on $K_n$. The supremum loss over finite $T\subseteq K_n$ is also an upper bound for the loss with a compact nonempty context $C\subseteq K_n$.
+\end{lemma}
+\begin{proof}
+The joined set is compact. A minimizing joined point has a finite normalized combination and hence uses finitely many points $T_x\subseteq C$. Its value is at least the minimum on $J_{T_x}^{K_n}(P)$, while $\min_{D_n\cup C}\varphi\le\min_{D_n\cup T_x}\varphi$. Subtracting yields the finite-context upper bound. Terms from $P$ need no replacement.
+\end{proof}
+
+\begin{theorem}[Neural realization of worst contextual loss]\label{thm:neural-transfer}
+Let $n\ge2$ and let $P$ be any finite representative with $E^{-1}P=D_n$. A positive worst affine loss of $P$ (with $\|w\|_1\le1$), or worst $1$-Lipschitz loss of $P$, is realized at a hidden-state merge of a continuous feedforward ReLU network on an interval. Its hidden image lies in $K_n$ and is the union of the diagonal and finitely many axial segments. Each axial segment has a three-generator representative whose ambient join behaves like its concrete points. The prefix needs $O(n^2)$ affine pieces, independent of the number of generators of $P$. The margin is an affine readout in the affine case, and a ReLU-realizable radial observation plus a constant in the Lipschitz case.
+\end{theorem}
+\begin{proof}
+By Theorem~\ref{thm:observation} and Corollary~\ref{cor:observations}, choose an attaining point $x^\star$, a context $T$ with $r\le2n+1$ points, and the appropriate observation. In the affine case its direction also attains the maximum. Put $c_0=\min_{D_n\cup T}w^\top z$ and denote the attained loss by $\delta>0$.
+
+Join the endpoint $\one_n$ to the first witness and consecutive witnesses to one another using axial paths. Between vertices $u,v$, perform coordinate changes with nonnegative contribution to $w^\top(v-u)$ first, and negative changes afterward. The observation along the path is at least $\min(w^\top u,w^\top v)$: it first increases, then decreases to its final value. Each path stays in the cube and uses at most $n$ segments. The resulting connected hidden path, preceded by a traversal of the diagonal, has at most $nr+1$ pieces and contains $T$. It preserves the concrete minimum $c_0$.
+
+For the Lipschitz case choose the attaining radial observation $\varphi(z)=\norm{z-x^\star}$. Its concrete minimum is $\delta$, since $\varphi(x^\star)=0$. Every witness has some coordinate differing from $x^\star$ by at least $\delta$. Hold that coordinate fixed, move all other coordinates to zero or one according to the sign of the separating coordinate, and then move that coordinate to the same endpoint. This axial path stays outside the open radius-$\delta$ cube about $x^\star$ and uses at most $n$ segments. The full diagonal also stays outside, because its minimum distance is at least $\delta$. Traverse it as needed to visit each witness by an out-and-back excursion. At most $2nr+r+1$ pieces suffice. The minimum remains $\delta$, as the original witnesses and diagonal are included.
+
+In either construction let $C$ be the union of its axial segments. Represent them by $U(B)$ and the diagonal by $P$. Lemma~\ref{lem:box-context} makes the resulting slice equal to the concrete-context join using $C$. The original spurious point remains and the concrete minimum is unchanged, so the loss is at least $\delta$. Lemma~\ref{lem:compact-context} bounds it above by $\delta$. Thus it is exactly $\delta$.
+
+Any such finite continuous piecewise-affine path has the hinge realization~\eqref{eq:relu-hinge}, after parameter rescaling and with its own vertices. Its values are nonnegative, so the following ReLU preserves them. An affine readout is immediate; the radial suffix is constructed from absolute values and pairwise maxima using ReLUs. Subtract $c_0-\delta/2$ in the affine case, or $\delta/2$ in the radial case, to obtain true minimum margin $\delta/2$ and merged minimum $-\delta/2$.
+\end{proof}
+
+\paragraph{Quantifiers and resources.}
+For each fixed $P$, the realizing network and context may depend on $P$. Taking the supremum over this interface family and then the infimum over $M$-generator diagonal representatives recovers $\Laff(M,n)$ or $\Llip(M,n)$. It does not give one fixed network defeating every $M$-generator strategy. The context uses at most $nr$ distinct axial segments, hence at most $3nr$ displayed contextual generators before sharing endpoints; these are not charged to $M$. The repeated excursions do not require duplicate geometric operands. Real or algebraic parameters are allowed; no bound on encoding length or solver runtime is obtained. A zero-loss case needs no obstructing classifier.
+
+\paragraph{Lipschitz contract for a nonlinear suffix.}
+If its margin $\psi$ has a certified infinity-norm Lipschitz constant $L$ on $K_n$ and the concrete diagonal-plus-box-context union has known lower bound $\underline\mu$, the Lipschitz-optimal partition gives
+\[
+\min_{J_C^{K_n}(P_M)}\psi\ge\underline\mu-\frac{L}{2(M-1)}\qquad(n\ge2).
+\]
+This follows by scaling, Lemmas~\ref{lem:box-context}--\ref{lem:compact-context}, and Theorem~\ref{thm:lipschitz}. It controls interface loss, not the cost of computing $\underline\mu$ or exactly analyzing the suffix. Property-specific representatives can do better: Proposition~\ref{prop:nonlinear-recovery} achieves zero loss for its radial query with four generators, whereas the uniform Lipschitz loss at that budget is $1/6$.
+
+\paragraph{Containment and minimax are different policies.}
+The contained representative $Q\subseteq P$ of Theorem~\ref{thm:partition} improves the joined set for every ambient context $R^\sharp$, since $\Hu(Q\cup R^\sharp)\subseteq\Hu(P\cup R^\sharp)$. Exact suffix evaluation preserves this inclusion advantage; a heuristic bound computation need not. In contrast, reconstructing an optimal minimax partition controls worst-case loss within its model, but need not improve each fixed query compared with any prior representative. A sound implementation must certify the diagonal invariant before applying either construction; empirical activation correlations are insufficient.

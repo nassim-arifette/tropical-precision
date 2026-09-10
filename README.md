@@ -2,6 +2,8 @@
 
 Exact-arithmetic code for contextual precision and generator budgets in tropical abstract domains, with two constructed ReLU certification examples.
 
+The accompanying manuscript by Nassim Arifette is available as a [PDF](paper/main.pdf), with [LaTeX sources, the figure and build instructions](paper/). This is the version intended for arXiv.
+
 ## Quick start
 
 Python 3.11 or newer is sufficient for these read-only checks:
@@ -38,6 +40,7 @@ See [reproduction instructions](docs/reproducibility.md) for expected outputs an
 | `scripts/` | Reproduction entry point |
 | `results/` | Reference results and verification records |
 | `docs/` | Reproduction instructions and interpretation of results |
+| `paper/` | Manuscript PDF, LaTeX sources, figure and build instructions |
 
 ## Scope
 
@@ -48,3 +51,4 @@ The computations support explicit constructions, finite tests and certified scal
 Citation metadata for the software is in [CITATION.cff](CITATION.cff). When reporting results, include the commit identifier used for reproduction.
 
 The code and accompanying repository documentation are available under the [MIT license](LICENSE).
+The manuscript, its LaTeX sources and its figure are covered by the separate [paper copyright notice](paper/LICENSE).

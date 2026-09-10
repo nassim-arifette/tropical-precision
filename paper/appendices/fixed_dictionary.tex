@@ -1,0 +1,73 @@
+\section{A Companion Result for Retained Disjunctions}\label{app:dictionary}
+This result concerns ordinary unions of polyhedra with a fixed finite normal dictionary. Neither a piece nor a facet is identified with a tropical generator.
+
+Fix $d,m\ge1$ and a finite symmetric dictionary $\mathcal T\subset\R^{d+m}$ of nonzero normals containing every signed coordinate vector. Let $D$ have these normals as rows. A nonempty piece is $P_D(c)=\{z:Dz\le c\}$; signed unaries make it compact. On $B=[0,1]^d$, let $f(x)=Wx+b$, $G_f=\{(x,f(x)):x\in B\}$, and $R_W=[-W\ I_m]$. An admissible union $U$ of at most $N$ pieces satisfies $G_f\subseteq U\subseteq B\times\R^m$. Define
+\[
+e_N^\mathcal T(W)=\inf_U\sup_{(x,y)\in U}\norm{y-Wx-b},\quad
+\tau=\min_{\row(R_W)\subseteq\row(D_I)}\rank D_I,\quad r=\tau-m.
+\]
+The minimum over row subsets exists and $0\le r\le d$. The infimum over unions need not be assumed attained; output translation removes dependence on $b$.
+
+\begin{theorem}[Fixed-normal rank-excess law]\label{thm:dictionary}
+If $r>0$, then $e_N^\mathcal T(W)=\Theta(N^{-1/r})$, with constants depending on $D,W,d,m$, not $N$ or the offsets of the pieces. If $r=0$, one piece represents $G_f$ exactly. The largest dimension of a dictionary piece contained in the graph is $d-r$.
+\end{theorem}
+
+\paragraph{Exactly preservable dimension.}
+At a relative interior point of a polytope $Q$, its constraints active everywhere determine its affine hull. Thus the direction of any dictionary piece $Q\subseteq G_f$ is $\ker D_I$ for a row subset $I$. It is contained in $\ker R_W$, so $\row(R_W)\subseteq\row(D_I)$ and $\dim Q\le d-r$. Conversely choose a minimizing $I$, translate $\ker D_I$ through a graph point with interior input, and intersect with a sufficiently small joint-coordinate box. Symmetry encodes the equalities $D_Iz=D_Iz_0$ in the dictionary. This gives an exact piece of dimension $d-r$.
+
+\paragraph{Uniform reduction to an exact piece.}
+For fixed $D$ and a linear map $R$ with nonzero rows, there is $K(D,R)$ such that every piece $P_D(c)$ containing zero and satisfying $\norm{Rz}\le\eps$ on the piece has an exact subpiece $Q=P_D(c')$ with
+\begin{equation}\label{eq:kernel-reduction}
+0\in Q\subseteq P_D(c)\cap\ker R,\qquad
+\sup_{z\in P_D(c)}\dist_\infty(z,Q)\le K(D,R)\eps.
+\end{equation}
+Here is the uniformity argument. Since $0\in P_D(c)$, $c\ge0$. For each signed row $v$ of $R$, linear programming duality gives
+\[
+\max_{Dz\le c}v\cdot z
+=\min_{\lambda\ge0,\ D^\top\lambda=v}c^\top\lambda\le\eps.
+\]
+The dual is a pointed polyhedron and has an optimal vertex. Its vertices are finite in number for fixed $D,v$: each vertex support selects independent columns of $D^\top$. Over all these fixed dual polyhedra, let $\gamma>0$ be the smallest positive coefficient of any vertex. Choose one optimal vertex for each signed row and let $I$ be the union of their supports. Nonnegativity of all summands implies $c_i\le\eps/\gamma$ for $i\in I$.
+
+Set $c_i'=0$ on $I$ and leave other offsets unchanged. The selected dual certificates now force both signs of every row of $R$ to be nonpositive, so $Q\subseteq\ker R$. The system remains feasible at zero. The fixed-matrix Hoffman bound~\cite[Prop.~1]{pena2018},
+\[
+\dist_\infty(z,P_D(c'))\le H_D\norm{(Dz-c')_+},
+\]
+holds uniformly over feasible right-hand sides, including lower-dimensional polyhedra. It proves~\eqref{eq:kernel-reduction} with $K=H_D/\gamma$. This step keeps the reduced set in the same dictionary; simply intersecting with $\ker R$ would not suffice for the dimension argument.
+
+\paragraph{Lower bound.}
+Take an admissible union of error $\eps$, discard pieces not meeting the graph, and translate each remaining piece by a graph point it contains. Apply~\eqref{eq:kernel-reduction} with $R=R_W$. Translating back yields a dictionary subpiece $Q_\nu\subseteq G_f$ of dimension at most $d-r$, and the input projection of the original piece lies within $K\eps$ of its projected affine hull.
+
+Uniformly over affine subspaces $F\subseteq\R^d$ of dimension at most $d-r$, the volume of their infinity-norm $\eta$-neighborhood in $B$ is at most $C_d\eta^r$ for $0<\eta\le1$. To see this, use orthonormal coordinates tangent and normal to $F$. Tangential widths in the cube are at most $\sqrt d$ and normal widths in the Euclidean $\sqrt d\,\eta$-tube are at most $2\sqrt d\,\eta$. This bound is independent of orientation and translation. Since the projections of at most $N$ pieces cover the unit-volume cube,
+$1\le NC_d(K\eps)^r$ when $K\eps\le1$.
+For larger errors decrease the lower constant. Error zero is impossible when $r>0$, as a finite union of lower-dimensional projected affine sets cannot cover $B$. Taking the infimum proves the bound without assuming a minimizing union.
+
+\paragraph{Upper bound.}
+Choose a minimizing $I$ and let $T_Wx=(x,Wx)$. The map $D_IT_W$ has rank $r$: its kernel corresponds to $\ker D_I\subseteq\ker R_W$, of dimension $d-r$. For $r>0$, choose a rank-$r$ map $L$ whose rows span $\row(D_IT_W)$ and subdivide the bounding box of $L(B)$ into $q^r$ cells. For each nonempty graph portion
+$G_C=\{(x,Wx+b):x\in B,\ Lx\in C\}$, take its best dictionary enclosure
+\[
+P_C=\{z:t_j^\top z\le\max_{w\in G_C}t_j^\top w\ \text{for every dictionary row }t_j\}.
+\]
+Unary constraints retain the input box and compactness. For $i\in I$, both orientations bound $|t_i^\top(z-z_C)|$ by a constant times $q^{-1}$ on $P_C$, with $z_C\in G_C$. Since $R_W=B_ID_I$ for a fixed matrix $B_I$, the vertical residual is $O(q^{-1})$. Taking $q=\lfloor N^{1/r}\rfloor$ proves the upper bound. If $r=0$, $\row(D_I)=\row(R_W)$ and the dictionary equalities for the graph plane, together with the input bounds, give one exact piece.
+
+\paragraph{Hypotheses and corollaries.}
+Constants need not remain bounded as $W$ changes or gains a new alignment with the dictionary. Allowing graph-dependent new normal directions can make the graph exact immediately. Thus the theorem is not a lower bound against unrestricted adaptive languages.
+
+For a continuous piecewise-affine map with finitely many full-dimensional polyhedral regions, if each region guard is retained exactly as an additional resource, the rate has exponent determined by $r_*=\max_\rho r_{\mathcal T}(W_\rho)$. The upper bound covers each affine graph and intersects with its guard; the lower bound restricts to an interior box of a worst region. This does not justify dropping guards or applying an approximate join.
+
+For any nonempty compact $G\subseteq U$,
+\[
+\sup_{\Lip_\infty(\varphi)\le1}(\min_G\varphi-\min_U\varphi)
+=\sup_{u\in U}\dist_\infty(u,G).
+\]
+The upper bound is the Lipschitz inequality and the lower bound uses $-\dist_\infty(\,\cdot\,,G)$. For an affine graph the right side lies between the vertical error divided by $1+\|W\|_{\infty\to\infty}$ and the vertical error. These metric facts are classical; they translate the rate to worst observation loss.
+
+\paragraph{A disjunction versus a tropical hull.}
+For $f(x)=2x$ on $[0,1]$, the best zone on a graph subinterval $[a,b]$ is
+\[
+Z_{a,b}=\{a\le x\le b,\ 2a\le y\le2b,\ a\le y-x\le b\}.
+\]
+Its vertical error is exactly $b-a$. Every zone meeting the graph on that interval contains $Z_{a,b}$. A uniform partition gives error $1/N$, and the lengths of any $N$ graph-covering intervals sum to at least one, proving optimality. By contrast, any tropical convex enclosure of the graph contains
+$\max\{(0,0),(1,2)-\one_2\}=(0,1)$,
+of vertical error one. Refining an ordinary union and then replacing it by a tropical hull are separate operations.
+
+More generally, normalized tropical hull is nonexpansive in infinity-norm Hausdorff distance: pair operands within $\eps$ and reuse the same coefficients. Thus approximating a compact set before tropicalization controls an excess above the ideal hull's intrinsic error, not automatically the whole error.

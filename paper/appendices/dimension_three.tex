@@ -1,0 +1,63 @@
+\section{Dimension Three: Attainment and Asymptotics}\label{app:three}
+\paragraph{Three generators.}
+In the proof of Theorem~\ref{thm:dimension}, let $r=(\sqrt5-1)/2$ and $h=1-r$. Set
+\[
+u=h(1-h),\quad v=h(2-h),\quad x=(u,u,v),\quad
+w=\frac{(1,1,-2(1-h))}{2(2-h)}.
+\]
+The three context points
+\[
+(1-h,1-h,1),\quad(0,2u,h),\quad(2u,0,h)
+\]
+belong to the cube and have affine value zero, as does the minimum on $D_3$. The first context lift with coefficient $-(1-v)$ covers all positive coordinates; the last two with coefficient $-u$ cover all negative coordinates. The coefficient-zero anchor from $P_0$ is dominated by $E(x)$. Their maximum is $E(x)$, with observation $-(5\sqrt5-11)/2$. This attains the upper bound rather than merely providing a stationary candidate.
+
+\paragraph{Interior cell upper bound.}
+Any positive dimension-three deficit has three nonzero coefficients, since each magnitude is below $1/2$. Up to reflection, there are two positive coefficients of total $A=1-c$ and a negative singleton of magnitude $c<1/2$. Let $u$ be the positive-weight average and $v$ the negative coordinate. For $x\in[a,b]^3$,
+\[
+\delta\le cv-Au,\qquad \delta\le(1-2c)(1-v),\qquad a\le u<v\le b.
+\]
+No equality of positive coordinates or weights has been imposed. Replacing $u$ by $a$ and optimizing the two bounds in $c$ gives
+$f_a(v)=(v-a)(1-v)/(2-v+a)$.
+Writing $s=v-a$, its derivative numerator is $2(1-a)-4s+s^2$. If $h=b-a\le1-b$, this is nonnegative for $0\le s\le h$, since its value at $h$ is $2(1-b)-2h+h^2\ge0$. Thus $\delta\le h(1-b)/(2-h)$. Reflecting the opposite sign pattern gives $ha/(2-h)$, using $h\le a$. This proves the upper bound in Lemma~\ref{lem:interior}.
+
+For attainment suppose $a\le1-b$ and put
+\[
+A=\frac1{2-h},\quad c=\frac{1-h}{2-h},\quad
+x=(a,a,b),\quad w=(A/2,A/2,-c),\quad
+\delta=\frac{h(1-b)}{2-h}.
+\]
+Let $s=\delta/c$ and $r=1-b$. Use
+\[
+T=\{(a+r,a+r,b+r),(a-s,a+s,b-s),(a+s,a-s,b-s)\}.
+\]
+Here $s=h(1-b)/(1-h)\le h\le a$, so all contexts lie in the cube. Their affine values are zero. The first lift shifted by $-r$ supplies the positive coordinates, the other two shifted by $-s$ the negative coordinates, and the anchor $c(a,b)$ supplies coefficient zero. This reconstructs $E(x)$ with value $-\delta$. Reflection handles $a>1-b$. The zero-width case is immediate.
+
+\paragraph{An upper bound for arbitrary cells.}
+Put $\gamma=1-2c$. The same coefficient inequalities imply
+\[
+\delta\le h/2-\gamma(a+b)/2,\qquad \delta\le\gamma(1-a).
+\]
+Balancing them and reflecting yields the general bound
+\begin{equation}\label{eq:three-cell-upper}
+W_3(a,b)\le \frac{h\max(1-a,b)}{2+h},
+\end{equation}
+without interior assumptions.
+
+\paragraph{The leading constant.}
+Let $q=M-2$ and $\rho(t)=\max(t,1-t)/2$. Its integral is $3/8$, and $\rho\ge1/4$. Choose a partition with $\int_{t_{i-1}}^{t_i}\rho=3/(8q)$; every cell has width at most $3/(2q)$. Equation~\eqref{eq:three-cell-upper} gives
+\[
+W_3(a,b)\le\int_a^b\rho(t)\,dt+h^2/2,
+\qquad
+\Laff(M,3)\le\frac3{8q}+\frac9{8q^2}.
+\]
+For the matching lower limit, fix $0<\eps\le1/4$ and truncate any partition to $[\eps,1-\eps]$. If a truncated cell has length at least $\eps$, it contains an interval of length $\eps$ satisfying the interior conditions. The exact interior formula is at least $H/6$ when $H\le1/2$. Therefore, once the partition loss $\delta<\eps/6$, every positive truncated width $H_i$ is below $\eps$, obeys the interior conditions, and is at most $6\delta$. On that interval,
+\[
+\int_{a_i}^{b_i}\rho\le
+H_i\max(a_i,1-b_i)/2+H_i^2/2\le\delta+H_i^2/2.
+\]
+Summing gives
+\[
+3/8-\eps+\eps^2/2
+\le q\delta+3\delta(1-2\eps).
+\]
+Use a sequence of partitions within $q^{-2}$ of the infimum; the upper bound makes $\delta\to0$. Then let $q\to\infty$ and $\eps\downarrow0$, proving~\eqref{eq:three-asymptotic}. The density argument has the same general partitioning mechanism as~\cite{tilli2019}; the density here comes from the specific contextual cell formula.

@@ -1,0 +1,115 @@
+\section{The Exact Affine Budget Law in Dimensions at Least Four}\label{sec:budgets}
+For $d=n-3\ge0$ and $0<c<1/2$, define
+\begin{align}
+D_d(c)&=2(d+1)-dc,&
+k_d(c)&=\frac{c(d+2c)}{D_d(c)},\nonumber\\
+B_d(c)&=\frac{(1-2c)D_d(c)}{2(d+1)(1-c)^2},&
+F_d(c)&=\frac{c(d+2c)(1-2c)}{2(d+1)(1-c)^2}.\label{eq:boundary-functions}
+\end{align}
+Thus $F_d=k_dB_d$. The endpoint extensions have $B_d(0)=1$, $B_d(1/2)=0$, and $F_d(0)=F_d(1/2)=0$.
+
+\begin{theorem}[Exact boundary cost]\label{thm:boundary}
+For $0<b\le1/2$, let $c_d(b)$ be the unique root of $B_d(c)=b$ in $(0,1/2)$ and put $N_d(b)=F_d(c_d(b))$. Then
+\begin{equation}\label{eq:boundary-cost}
+W_n(0,b)=
+\begin{cases}
+N_0(b)=\displaystyle b\left(\frac{\sqrt{1-b}}{1+\sqrt{1-b}}\right)^2,&n=3,\\[3pt]
+\max\{\kappa_d b,N_d(b)\},\quad \kappa_d=d/(3d+1),&n\ge4.
+\end{cases}
+\end{equation}
+At $b=0$ the cost is zero. Reflection gives $W_n(1-b,1)=W_n(0,b)$.
+\end{theorem}
+\begin{proof}
+Substitution in~\eqref{eq:negative-boundary} gives $\max_c\min\{k_d(c)b,F_d(c)\}$. The derivatives are
+\begin{align*}
+k_d'(c)&=\frac{2d(d+1)+8(d+1)c-2dc^2}{D_d(c)^2}>0,\\
+B_d'(c)&=-\frac{d+(d+4)c}{2(d+1)(1-c)^3}<0,\\
+F_d'(c)&=\frac{d(1-3c)+4c(1-3c+c^2)}{2(d+1)(1-c)^3}.
+\end{align*}
+Let $r=(3-\sqrt5)/2$. The last numerator is negative for $c>r$, while
+\[
+B_d(r)=\frac{(1-2r)(2-r)}{2(1-r)^2}
+       +\frac{r(1-2r)}{2(d+1)(1-r)^2}>\frac12,
+\]
+because the first term is $1/2$. Therefore $c_d(b)>r$ for $b\le1/2$. Below the crossing, $k_d(c)b\le k_d(c_d(b))b$; above it, $F_d(c)\le F_d(c_d(b))$. At the crossing the two coincide, proving the singleton maximum without a global unimodality assumption.
+
+The positive-singleton branch is bounded by $b^2/[4(2-b)]\le b/12$. For $d\ge1$ the balanced branch is at least $b/4$ and dominates it. For $d=0$, $B_0(2/5)=5/9>1/2$ implies $N_0(b)>4b/25>b/12$. Thus the positive singleton never determines a boundary cost. Solving $B_0(c)=b$ gives the displayed dimension-three formula.
+\end{proof}
+
+The root needed here is quadratic:
+\begin{equation}\label{eq:boundary-quadratic}
+2[b(d+1)-d]c^2+[5d+4-4b(d+1)]c+2(d+1)(b-1)=0.
+\end{equation}
+Specifying its interval handles a vanishing quadratic coefficient without dividing by it.
+
+\begin{theorem}[Every finite budget for $n\ge4$]\label{thm:budget}
+Let $n\ge4$, $M\ge4$, $d=n-3$, and $q=M-2$. Write $G_d(b)=W_n(0,b)$. There is a unique $b\in(0,1/2]$ such that
+\begin{equation}\label{eq:balance}
+b+(q-2)G_d(b)=1/2.
+\end{equation}
+Then $\Laff(M,n)=\delta=G_d(b)$. An optimum has two boundary cells of width $b$ and $q-2$ interior cells of width $2\delta$.
+
+Equivalently, let $c_{d,q}$ be the unique root in $(3/8,1/2)$ of
+\begin{equation}\label{eq:budget-cubic}
+(d+1)+[(q-5)d-2]c+(2q-5)(1-d)c^2-4(q-2)c^3=0.
+\end{equation}
+The exact loss is
+\begin{equation}\label{eq:budget-law}
+\boxed{\displaystyle
+\Laff(M,n)=\max\left\{\frac1{2(q+1+1/d)},\,F_d(c_{d,q})\right\}.}
+\end{equation}
+Together with Theorem~\ref{thm:dimension}, this covers every feasible budget.
+\end{theorem}
+\begin{proof}
+The function $G_d$ is continuous and nondecreasing; the latter also follows directly from interval inclusion. Hence the left side of~\eqref{eq:balance} is strictly increasing from zero to at least $1/2$, proving existence and uniqueness. Let $\delta=G_d(b)$. The partition
+\[
+0,\ b,\ b+2\delta,\ \ldots,\ b+2(q-2)\delta=1-b,\ 1
+\]
+has $q$ cells. The boundary costs equal $\delta$. Since $\delta\le b/2$, every interior width is at most $b$, and every interior cell is at distance at least $b$ from both outer cube boundaries. Lemma~\ref{lem:interior} therefore applies and gives cost $\delta$ for each interior cell. For $q=2$ there are none. The equal-cost certificate~\eqref{eq:partition-certificate} proves global optimality against every competing partition, and Theorem~\ref{thm:partition} transfers it to arbitrary generators. No symmetry of competitors or uniqueness of the optimizer was assumed.
+
+To derive the algebraic form, solve~\eqref{eq:balance} separately for the two entries in the maximum~\eqref{eq:boundary-cost}. The balanced solution has loss $1/[2(q+1+1/d)]$. For the singleton solution, substitute $b=B_d(c)$ and $\delta=F_d(c)$; clearing the positive denominator gives~\eqref{eq:budget-cubic}. Its domain is unambiguous: $B_d$ is strictly decreasing, $B_d(3/8)>1/2$, and $F_d$ is strictly decreasing on $[3/8,1/2]$ when $d\ge1$. Indeed, half its derivative numerator is
+$d(1-3c)/2+2c(1-3c+c^2)$; the first term is at most $-d/16$ and the second at most $1/64$. The sum is negative. Thus $B_d+(q-2)F_d=1/2$ has exactly one root there, even when the cubic degenerates.
+
+For $q>2$, the root in $b$ of the maximum of the two increasing left sides is the smaller of their roots. Since $\delta=(1/2-b)/(q-2)$, its loss is the larger of the two values. For $q=2$, $b=1/2$ and the formula follows directly from~\eqref{eq:boundary-cost}.
+\end{proof}
+
+\subsection{The singleton transition and second-order correction}
+The ratio $N_d(b)/b=k_d(c_d(b))$ strictly increases as $b$ decreases. For $d\ge1$, let $c_d^*$ be the positive root of
+\begin{equation}\label{eq:transition}
+2(3d+1)c^2+d(4d+1)c-2d(d+1)=0,
+\end{equation}
+and put $b_d^*=B_d(c_d^*)$. This is the unique crossing of $k_d(c)$ with $\kappa_d$. The balanced expression in~\eqref{eq:budget-law} is exact precisely for the integer budgets satisfying
+\begin{equation}\label{eq:threshold}
+M\le M_d^*:=4+\frac{1/(2b_d^*)-1}{\kappa_d}.
+\end{equation}
+At equality both expressions agree. Thresholds require exact comparisons, not rounding a floating value.
+
+\begin{corollary}[Dimension four and the asymptotic correction]\label{cor:transition}
+For $n=4$, $\Laff(M,4)=1/(2M)$ for $3\le M\le8$, and is strictly larger for every $M\ge9$. Specifically, with $c=10^{-1/3}$,
+\[
+\Laff(9,4)=\frac{c-2/5}{4(1-c)^2}\approx0.05586306176.
+\]
+For every fixed $n\ge4$,
+\begin{equation}\label{eq:second-order}
+\lim_{M\to\infty}M^2\left(\Laff(M,n)-\frac1{2M}\right)
+=\frac{n-3}{2(n-2)}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+For $d=1$, $c_1^*=(\sqrt{153}-5)/16$ and $M_1^*=(21+\sqrt{153})/4\in(8,9)$. The $M=3$ value follows from Theorem~\ref{thm:dimension}. For $M=9$, \eqref{eq:budget-cubic} is $2-20c^3=0$, yielding the displayed value.
+
+For general $d\ge1$,
+$k_d(1/2)-\kappa_d=1/[(3d+4)(3d+1)]>0$,
+so the singleton branch eventually dominates. In~\eqref{eq:balance}, $b\to0$ and $c_d(b)\to1/2$, whence $b/\delta\to(3d+4)/(d+1)$. The exact identity
+\[
+\delta=\frac1{2(M-4+b/\delta)}
+\]
+then gives~\eqref{eq:second-order}.
+\end{proof}
+
+Dimension three has a different interior law and is not obtained by putting $d=0$ in~\eqref{eq:budget-law}. Its boundary cost is nevertheless explicit, and balancing the two half-cells gives
+$\Laff(4,3)=(3-2\sqrt2)/2$. More generally,
+\begin{equation}\label{eq:three-asymptotic}
+\lim_{M\to\infty}M\Laff(M,3)=3/8.
+\end{equation}
+Appendix~\ref{app:three} proves this by the interior formula and the density $\rho(t)=\max(t,1-t)/2$. Exact values at $n=3$, $M\ge5$ remain open here. This open case does not affect the all-budget theorem for $n\ge4$.

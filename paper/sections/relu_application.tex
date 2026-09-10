@@ -1,0 +1,96 @@
+\section{An Affine Application to ReLU Certification}\label{sec:relu-application}
+
+We apply the representation laws to \emph{hidden-state merging before an affine readout}. Incoming hidden states can be represented exactly and still lose a classification certificate when merged. The application gives an explicit network and recovers its certificate by changing the diagonal representative.
+
+Tropical neural analyses combine affine abstractions, ReLU propagation and subdivision~\cite{goubault2021}. Proposition~5 of that work represents an octagon by an ambient tropical polyhedron intersected with signed-consistency equations. This motivates our semantics; it does not establish that a particular implementation uses the policy below. Throughout this section, $E$, $D_n$, $K_n$ and $J_T^{K_n}$ are exactly those of Sections~\ref{sec:contexts}--\ref{sec:partitions}. Contexts are consistent concrete states; clipping occurs after the join.
+
+\input{sections/relu_realization}
+
+
+\subsection{A rational classifier separates budgets three and four}
+Set $n=4$ and
+\begin{align*}
+t_1&=(0,2/3,1/3,1/3),&t_2&=(2/3,0,1/3,1/3),\\
+t_3&=(2/3,2/3,1,1/3),&t_4&=(2/3,2/3,1/3,1).
+\end{align*}
+For $u\in[0,1]$, the following $1\to9\to4\to2$ network has rational parameters, coordinatewise hidden ReLUs $\sigma$, and an affine output layer:
+\begin{align}
+a_i(u)&=\sigma(9u-i),\qquad 0\le i\le8,\label{eq:explicit-first}\\
+z(u)&=\sigma(Ba(u)),\quad
+B=\frac13\begin{pmatrix}
+3&-6&3&2&-2&0&0&0&0\\
+3&-4&1&-2&2&2&-2&0&0\\
+3&-5&2&0&0&2&-2&-2&2\\
+3&-5&2&0&0&0&0&2&-2
+\end{pmatrix},\label{eq:explicit-hidden}\\
+f_1(u)&=\frac94+5z_1(u)+4z_2(u)-4z_3(u)-4z_4(u),\qquad f_2(u)=0.\label{eq:explicit-head}
+\end{align}
+At the knots $i/9$, the hidden states are
+\[
+0,\ \one_4,\ t_1,\ t_1,\ t_2,\ t_2,\ t_3,\ t_3,\ t_4,\ t_4.
+\]
+Indeed, successive columns of $B$ are the first slope and the subsequent slope differences of this interpolant. Between knots the preactivation is affine; its endpoint values lie in $K_4$, so the second ReLU is the identity. Every vertex satisfies $z_1+z_2=z_3+z_4$, hence the full path does too. Therefore
+\begin{equation}\label{eq:true-margin}
+f_1(u)-f_2(u)=\frac94+z_1(u)\in[9/4,13/4].
+\end{equation}
+The nonconstant margin has exact minimum $9/4$.
+
+\paragraph{Specified pooling policy.}
+Split at all knots. Pool the first region, whose image is $D_4$, and the four constant regions, whose images form $T=\{t_1,t_2,t_3,t_4\}$. Represent the first with $P$ and the latter by $E(t_j)$, obtaining $J_T^{K_4}(P)$. Check the four connecting regions separately by their affine endpoint minima, at least $9/4$. Take the minimum over the pool and these four bounds to certify the entire input.
+
+\begin{proposition}[Failure at three generators, recovery at four]\label{prop:relu-three-four}
+For this fixed network and policy, every exact diagonal representative with at most three finite generators loses the classification certificate. The canonical four-generator representative for the partition $0<1/2<1$ certifies margin at least $1/8$ on the pool and thus on the entire input. The budget counts the diagonal representative; the displayed merged hulls use seven or eight generators including $T$.
+\end{proposition}
+\begin{proof}
+Write $g=(0\one_4,-\one_4)$ and $P_3=\Hu\{E(0),E(\one_4),g\}$. Theorem~\ref{thm:partition} gives $P_3\subseteq P$ for every admissible three-generator $P$. The state $z^\star=(1/3,1/3,2/3,2/3)$ has the normalized identity
+\[
+E(z^\star)=\max\bigl(g,\{E(t_j)-\tfrac13\one_8:1\le j\le4\}\bigr).
+\]
+Thus it lies in every such pool, and its margin is
+\begin{equation}\label{eq:bad-margin}
+\frac94+\frac53+\frac43-\frac83-\frac83=-\frac1{12}.
+\end{equation}
+Even exact abstract minimization cannot prove positive margin.
+
+Replace $g$ by two anchors:
+\[
+P_4=\Hu\{E(0),E(\one_4),(0\one_4,-\tfrac12\one_4),
+                         (\tfrac12\one_4,-\one_4)\}.
+\]
+It has the same exact slice. Theorem~\ref{thm:budget} gives
+$\loss_{\rm aff}(P_4)=\Laff(4,4)=1/8$. For the readout $w=(5,4,-4,-4)$, homogeneity and $\|w\|_1=17$ yield
+\begin{equation}\label{eq:good-margin}
+\min_{J_T^{K_4}(P_4)}(9/4+w^\top z)\ge\frac94-17\cdot\frac18=\frac18>0.
+\end{equation}
+Combine with the transition bounds to finish.
+\end{proof}
+
+This refinement \emph{replaces} the coarse anchor. Adding generators while retaining it would enlarge the hull and keep the spurious state. The network, specification and input partition remain fixed. Equations~\eqref{eq:bad-margin} and~\eqref{eq:good-margin} give respectively an upper witness bound and a proved lower bound on abstract minima, not measured solver optima.
+
+\begin{corollary}[Readout stability]\label{cor:readout-stability}
+For the same prefix and policy, replace the readout by $m(z)+\Delta b+\Delta w^\top z$. If $\eta=|\Delta b|+\|\Delta w\|_1<1/12$, the true margin stays positive, the three-generator witness stays negative, and the four-generator certificate stays positive.
+\end{corollary}
+\begin{proof}
+The perturbation is bounded by $\eta$ on $K_4$. The three bounds become $9/4-\eta$, $-1/12+\eta$, and $1/8-\eta$. This does not perturb the prefix or assert stability of exact diagonal geometry.
+\end{proof}
+
+\subsection{A sufficient budget for affine classification margins}
+For a readout $f(z)=Wz+b$, set $m_j(z)=(W_y-W_j)z+b_y-b_j$. Suppose $D_n\cup T$ has certified margin bounds $\underline\mu_j>0$. With an optimal diagonal representative $P_M$, the definition of contextual loss gives
+\begin{equation}\label{eq:margin-contract}
+\min_{J_T^{K_n}(P_M)}m_j\ge\underline\mu_j-\|W_y-W_j\|_1\Laff(M,n).
+\end{equation}
+Consequently a sufficient uniform budget is
+\begin{equation}\label{eq:budget-policy}
+\min\{M\ge3:\ \|W_y-W_j\|_1\Laff(M,n)<\underline\mu_j\quad\forall j\ne y\}.
+\end{equation}
+Zero readout differences need no division. Construct the anchors from the exact law or a certified conservative bound. The exact all-budget law is available for $n\ge4$; for $n=3$, $M\ge5$, a bound such as $\Laff\le\Llip$ remains valid. For fixed $n\ge4$, $\Laff(M,n)\sim1/(2M)$ gives the resource scale. The rule is sufficient, not necessarily minimal for a known set of readouts: the minimax is uniform over contexts and affine observations.
+
+\paragraph{Scope of the contract.}
+The operand is a diagonal-plus-concrete-context family in the unit cube. An arbitrary abstract operand can contain additional inconsistent ambient points; the theorem does not bound their effects. Independent coordinate normalizations change the tropical geometry, so a general activation box needs a separate argument. Generator counts do not measure total verification cost, and the four transition checks are part of the specified policy.
+
+\paragraph{An essential baseline: query before merging.}
+For any fixed observation $m$, $\min_{\cup_iS_i}m=\min_i\min_{S_i}m$. Precise per-region readout evaluation therefore avoids this loss. Retaining disjunctions or the equality $z_1+z_2=z_3+z_4$ also certifies this example. The result concerns \emph{merge-before-query} summaries, not a universal ReLU verification barrier. Such geometric summaries can be useful for reuse across later properties; a nonlinear suffix requires additional analysis.
+
+
+\paragraph{What an implementation must test next.}
+Compare the exact representations with the same-budget conventional placement, query-before-merge, and a baseline retaining affine dependencies. The rational classifier is a regression test of the mechanism. To claim usefulness on trained networks, locate this exact merge operation in an implementation and measure certificate changes together with construction, representation and solver costs. DeepPoly~\cite{singh2019} is an external comparison, not an implementation of this policy. Convex-relaxation expressiveness results~\cite{mao2026} use different represented families and resource quantifiers. No experimental superiority over either is asserted.

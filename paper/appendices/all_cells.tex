@@ -1,0 +1,96 @@
+\section{All-Cell Reduction and Certified Evaluation}\label{app:allcells}
+This appendix supplies the general scalar reduction used by the finite-budget certificates. The main all-budget theorem for $n\ge4$ needs only the boundary calculation and interior costs, whose essential arguments are in the main text.
+
+\subsection{Left cells}
+For $[a,b]\subseteq[0,1/2]$, let $h=b-a$. Lemma~\ref{lem:coefficient} bounds every positive original deficit by~\eqref{eq:means}, using \emph{sign-weighted averages}. It does not require the original coordinates to have just two levels. As in Lemma~\ref{lem:boundary-reduction}, the case of two nonsingleton groups is maximized by $A=C=1/2$, $p=n-2$, $k=2$. Retaining the constraint $u\ge a$ gives
+\begin{equation}\label{eq:allcell-balanced}
+B_n(a,b)=\min\{h/2,(n-3)b/(3n-8)\}\quad(n\ge4).
+\end{equation}
+The optimizer is $u=\max(a,b/(1+2\alpha))$, $v=b$, $\alpha=1-1/(n-2)$. The low supports equal $\alpha u$, high supports equal $1/4$, and the baseline $(b-u)/2$ equals the smaller term. For $A\ge1/2$ both bounds $Cb-Aa$ and $\alpha Cb/(A+\alpha)$ decrease in $A$; for $A\le1/2$ both $A-C(1-b)-Aa$ and the corresponding intersection bound increase. This justifies the balancing even with a nonzero left endpoint.
+
+For a positive singleton put $C=1-A$, $\alpha=1-2A$, $B=A-C(1-b)$, $0<A<1/2$. The branch at fixed $A$ is
+\[
+P(a,b;A)=\max\{0,\min(B-Aa,\alpha B/(A+\alpha))\}.
+\]
+When positive, it is attained at $u=\max(a,B/C)$, $v=b$, with the other coefficients all $-C/(n-1)$. Positivity forces $A>(1-b)/(2-b)\ge1/3$, so $A>C/(n-1)$. Every high positive-sector support is
+$A-C/(n-1)+(C-A)v$.
+Its excess over the diagonal baseline is $C(1-1/(n-1))-A(v-u)>0$. The low negative-sector support is $\alpha u$. Thus the ignored supports do not invalidate the relaxed bound. Setting $s=1-A/C$ and optimizing gives the closed expression
+\begin{equation}\label{eq:allcell-positive}
+P(a,b)=\frac{s_*(b-s_*)}{2-s_*},\qquad
+s_*=\min\{h,2-\sqrt{4-2b}\}.
+\end{equation}
+For $s\le h$ the objective is $s(b-s)/(2-s)$, with derivative numerator $2b-4s+s^2$; for $s>h$ the positive part of $(h-s(1-a))/(2-s)$ decreases.
+
+For a negative singleton write $C=c$, $A=1-c$, $\gamma=1-2c$, $\alpha=1-2A/(n-1)$, $0<c<1/2$. Expanding
+\[
+\delta+A\max(a,\delta/\alpha)+c\max(1-b,\delta/\gamma)\le c
+\]
+gives
+\begin{equation}\label{eq:allcell-negative}
+N_n(a,b;c)=\max\left\{0,\min\left(
+cb-Aa,\frac{\alpha cb}{\alpha+A},
+\gamma(c/A-a),\frac{c}{1+A/\alpha+c/\gamma}\right)\right\}.
+\end{equation}
+It is attained at $u=\max(a,\delta/\alpha)$, $v=\min(b,1-\delta/\gamma)$, with $n-1$ equal positive coefficients and the negative singleton. The baseline forces $u<v$ and ensures both levels lie in $[a,b]$. Missing supports are exactly $\alpha u$ and $\gamma(1-v)$. Unused zero-weight coordinates in the original configuration may be allocated to the positive group: this increases $\alpha$ and relaxes the necessary bounds. Thus no original zero case is excluded.
+
+The exact left-cell cost is
+\begin{equation}\label{eq:left-cell}
+L_n(a,b)=\max\{P(a,b),\max_{0\le c\le1/2}N_n(a,b;c),
+                       B_n(a,b)\text{ if }n\ge4\}.
+\end{equation}
+The singleton branches extend continuously by zero to their parameter endpoints. They cannot be dropped merely because they do not optimize $W_n(0,1)$: at $n=4$, $[a,b]=[0,1/10]$, $c=47/100$ gives
+\[
+N_4(0,1/10;47/100)=4559/176500>1/40=B_4(0,1/10).
+\]
+This exact counterexample prompted the boundary analysis.
+
+\subsection{Straddling averages and arbitrary cells}
+Suppose $a\le1/2\le b$. For $p=1,\ldots,n-1$, $k=n-p$, take
+\begin{gather*}
+\max(0,1-k/2)<A<\min(1,p/2),\qquad C=1-A,\\
+\alpha=1-2A/p,\quad\beta=1-2C/k,\quad m=\min(A,C).
+\end{gather*}
+Configurations whose sign averages satisfy $u\le1/2\le v$ are bounded by
+\begin{equation}\label{eq:allcell-central}
+\begin{split}
+S_{pk}(a,b;A)=\max\{0,\min(&\alpha/2,\beta/2,m-Aa-C(1-b),\\
+&\frac{m-C(1-b)}{1+A/\alpha},
+\frac{m-Aa}{1+C/\beta},
+\frac m{1+A/\alpha+C/\beta})\}.
+\end{split}
+\end{equation}
+To verify both necessity and sufficiency, let $\delta$ be the displayed value and put
+$u=\max(a,\delta/\alpha)$, $r=\max(1-b,\delta/\beta)$, $v=1-r$.
+The first two bounds imply $u,r\le1/2$, and the last four are exactly the expansion of $\delta+Au+Cr\le m$. For $\delta>0$ they force $u<v$. The two-level point with equal weights in each sign group has supports $\alpha u$ and $\beta r$: displacements of radius $u$ or $r$ fit in the cube because $u,r\le1/2$ and $u\le v$. This proves attainment. If the original sign counts total less than $n$, allocate unused coordinates to the positive group before applying the construction.
+
+Every original positive configuration has averages either both left of $1/2$, both right, or straddling. Classifying the averages rather than the individual coordinates is essential. It follows that $W_n(a,b)$ is the maximum of the applicable entries
+\begin{align*}
+&L_n(a,\min(b,1/2))&&\text{if }a<1/2,\\
+&L_n(1-b,\min(1-a,1/2))&&\text{if }b>1/2,\\
+&\max_{p=1,\ldots,n-1}\max_A S_{p,n-p}(a,b;A)
+&&\text{if }a<1/2<b.
+\end{align*}
+Zero-width entries are zero and may be omitted. The strict straddling condition avoids redundant branches at $1/2$; the side formula already covers equality. Central branches extend by zero to parameter endpoints because $m$, $\alpha$, or $\beta$ tends to zero. Thus every positive-width cell in $n\ge3$ has an attaining two-level maximizer with equal coefficients within each sign group. The upper proof treated arbitrary coordinates, weights, zeros, and ties.
+
+\subsection{Continuity, attainment, and global certificates}
+For a fixed signed sector $(j,\sigma)$, its support at $x$ is
+\begin{equation}\label{eq:support-radius}
+H_{j,\sigma}(x,w)=
+\max_{0\le r\le R_x}
+\left[\sigma w_jr+\sum_{i\ne j}|w_i|\min(r,b_i(x))\right],
+\end{equation}
+where $R_x=1-x_j$ or $x_j$, and $b_i(x)=1-x_i$ if $w_i\ge0$, $x_i$ otherwise. If $\norm{x-y}\le\eta$, transport $r$ to $\min(r,R_y)$. Each term changes by at most its coefficient magnitude times $\eta$. Therefore $H_{j,\sigma}$ is $1$-Lipschitz in $x$ when $\|w\|_1\le1$, as is the diagonal baseline.
+
+For two positive-width cells, map coordinates by the increasing affine map from one interval to the other. It preserves all orders and ties, hence all missing sectors, and moves every coordinate by at most the maximum endpoint displacement. Taking maxima in both directions gives
+\begin{equation}\label{eq:cell-continuity}
+|W_n(a,b)-W_n(a',b')|\le\max\{|a-a'|,|b-b'|\}.
+\end{equation}
+If one width is zero, use $W_n(a,b)\le(b-a)/2$ to obtain the same bound. This avoids assuming pointwise continuity when the missing-sector set changes. Compactness of the simplex of weak knots proves that every finite-budget optimum is attained, including the unresolved closed-form cases in dimension three.
+
+In fact the minimax value equals the maximum of the minimum cell cost over weak $q$-cell partitions. One inequality is~\eqref{eq:partition-certificate}. For the other, fix $0<\delta<L_q$, where $L_q$ is the minimax value, and define
+$R_\delta(a)=\max\{b\in[a,1]:W_n(a,b)\le\delta\}$.
+Continuity ensures existence and $R_\delta(a)>a$ for $a<1$. Starting at zero, iterate this map $q$ times. None of these endpoints reaches one, as that would give a partition of cost at most $\delta$. Each completed greedy cell has cost exactly $\delta$. Replace the last endpoint by one; the first $q-1$ cells still have cost $\delta$ and the last has larger cost. Let $\delta\uparrow L_q$ and use compactness. If $L_q=0$, both quantities are zero by nonnegativity and the first inequality. This proves value duality, not equality of optimizer sets.
+
+At a fixed two-level geometry, changing the sign mass $A$ changes $w$ by $1$-norm $2|\Delta A|$. All displacement coordinates in~\eqref{eq:affine-support} lie in $[-1,1]$, so each baseline or support changes by at most $2|\Delta A|$. Taking minima, positive parts, and maxima over the fixed two-level family preserves that bound. The scalar branches above are therefore $2$-Lipschitz, including their continuous endpoint extensions. Exact midpoint evaluation on $[l,r]$ yields the rigorous upper bound $f((l+r)/2)+(r-l)$. Complete rational interval covers certify branch suprema; best-first bisection converges to any positive requested tolerance. This is a specialization of classical Lipschitz global optimization~\cite{shubert1972}.
+
+The endpoint bound also gives a convergent finite grid minimax calculation. Rounding optimal knots to a grid of mesh $1/H$ changes each cell cost by at most $1/H$; cell enclosures of width at most $\eps$ yield a total minimax bracket of width at most $1/H+2\eps$. This dynamic-programming route is a mathematical convergence statement. The released implementation instead verifies proposed partition certificates by scalar covers; it does not claim to implement that grid algorithm.
